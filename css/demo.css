@@ -79,6 +79,7 @@ article p{
 }
  
 @media only screen and (min-width: 720px){
+   
     main{
       max-width: 720px;
       margin-left: auto;
@@ -89,65 +90,3 @@ article p{
 
 }
 
-.set-overlayer,
-.set-glass,
-.set-sticky {
-	cursor: pointer;
-	height: 45px;
-	line-height: 45px;
-	padding: 0 15px;
-	color: #333;
-	font-size: 16px;
-}
-.set-overlayer:after,
-.set-glass:after,
-.to-active:after,
-.set-sticky:after {
-	font-family: FontAwesome;
-	font-size: 18pt;
-	position: relative;
-	float: right;
-}
-.set-overlayer:after,
-.set-glass:after,
-.set-sticky:after {
-	content: "\f204";
-	transition: .6s;
-}
-
-.to-active:after {
-	content: "\f205";
-	color: #008080;
-	transition: .6s;
-}
-.set-overlayer,
-.set-glass,
-.set-sticky,
-.source,
-.theme-tray {
-	margin: 10px;
-	background: #f2f2f2;
-	border-radius: 5px;
-	border: 2px solid #f1f1f1;
-	box-sizing: border-box;
-}
-/* Syntax Highlighter*/
-
-pre.prettyprint {
-	padding: 15px !important;
-   margin: 10px;
-	border: 0 !important;
-  background: #f2f2f2;
-  overflow: auto;
-}
-
-.source {
-	white-space: pre;
-	overflow: auto;
-	max-height: 400px;
-}
-code{
-    border:1px solid #ddd;
-    padding: 2px;
-    border-radius: 2px;
-}
