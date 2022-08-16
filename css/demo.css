@@ -13,11 +13,10 @@ body{
 }
 .intro{
    background: #fff;
-   padding: 60px 30px;
    color: #333;
    margin-bottom: 15px;
    line-height: 1.5;
-   text-align: center;
+   
 }
 .intro h1 {
    font-size: 18pt;

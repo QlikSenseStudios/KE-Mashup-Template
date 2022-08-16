@@ -28,7 +28,7 @@
       var bsDefaults = {
         offset: false,
         overlay: true,
-        width: '330px'
+        width: '600px'
       },
         bsMain = $('.bs-offset-main'),
         bsOverlay = $('.bs-canvas-overlay');
@@ -94,17 +94,39 @@
           </div>
         </div>
         <div class="menu">
+          <!-- LOGO -->
           <div class="logo">
             LOGO
           </div>
+          <!-- End LOGO-->
+          <!-- Searchbar Bootstrap-->
+          <div class="bootstrap-iso">
+            <li class="search-bar">
+              <div class="input-group input-group-sm mb-3">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-sm">
+                          <i class="fas fa-search fa-md"></i></span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Search you data.."
+                      aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              </div>
+          </li>
+          </div>
+          <!--End Searchbar BS-->
           <!---- Filter icon-->
           <div class="right_menu">
             <ul>
+              <li>
+                <i class="fas fa-bell"></i>
+              </li>
+              <li>
+                <i class="fas fa-bookmark"></i>
+              </li>
               <li data-toggle="canvas" data-target="#bs-canvas-right" aria-expanded="false"
                 aria-controls="bs-canvas-right">
                 <i class="fas fa-filter"></i>
               </li>
-            </ul>
+            </ul>  
           </div>
           <!--End Filter icon-->
         </div>
@@ -149,22 +171,13 @@
             <h1> Content </h1>
           </header>
           <div class="item">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab a nesciunt doloribus. Explicabo minus cumque,
-            molestiae tempore repellendus iusto enim maiores pariatur officiis perferendis excepturi, ut dolore laborum
-            eligendi laudantium placeat aspernatur! Quos dolorum unde officiis labore est animi excepturi neque,
-            provident, inventore nobis expedita facilis aspernatur, nihil in atque?
+            ------
           </div>
           <div class="item">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab a nesciunt doloribus. Explicabo minus cumque,
-            molestiae tempore repellendus iusto enim maiores pariatur officiis perferendis excepturi, ut dolore laborum
-            eligendi laudantium placeat aspernatur! Quos dolorum unde officiis labore est animi excepturi neque,
-            provident, inventore nobis expedita facilis aspernatur, nihil in atque?
+           ------
           </div>
           <div class="item">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab a nesciunt doloribus. Explicabo minus cumque,
-            molestiae tempore repellendus iusto enim maiores pariatur officiis perferendis excepturi, ut dolore laborum
-            eligendi laudantium placeat aspernatur! Quos dolorum unde officiis labore est animi excepturi neque,
-            provident, inventore nobis expedita facilis aspernatur, nihil in atque?
+            ------
           </div>
         </div>
         <!--End Context Container-->
@@ -180,7 +193,7 @@
       <header class="bs-canvas-header p-3-change-rem bg-change-green overflow-auto">
         <button type="button" class="bs-canvas-close float-left close" aria-label="Close"><span aria-hidden="true"
             class="text-light">&times;</span></button>
-        <h4 class="d-inline-block text-light mb-0 float-right">Filters</h4>
+        <h4 class="d-inline-block text-light mb-0" style="margin-left: 45%;">Filters</h4>
       </header>
       <div class="bs-canvas-content px-3 py-5">
         <!-- Filters Content-->

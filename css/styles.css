@@ -79,6 +79,7 @@
 
 .top_navbar .menu .right_menu ul li{
   position: relative;
+  padding: 0 15px;
 }
 
 .top_navbar .menu .right_menu ul li .fas{
@@ -242,9 +243,6 @@
   overflow-y: auto;
 }
 
-.bs-canvas-left {
-  left: 0;
-}
 
 .bs-canvas-right {
   right: 0;
@@ -262,4 +260,10 @@
 }
 .bg-change-green{
   background-color: #106c5d!important;
+}
+
+
+.search-bar {
+  margin: 15px auto 0 auto;
+  width: 40em;
 }
