@@ -134,30 +134,39 @@
     <div id="bs-canvas-right" class="bs-canvas bs-canvas-anim bs-canvas-right position-fixed bg-light h-100"
       data-offset="true" data-overlay="false">
       <header class="bs-canvas-header p-3-change-rem bg-change-green overflow-auto">
-        <button type="button" data-toggle="tooltip" data-placement="bottom" title="Close Filter Panel" class="bs-canvas-close float-left close" aria-label="Close"><span aria-hidden="true"
+        <div style="display:flex;justify-content: space-between;
+        align-items: center;
+        "> 
+          <button type="button" data-toggle="tooltip" data-placement="bottom" title="Close Filter Panel" class="bs-canvas-close close" aria-label="Close"><span aria-hidden="true"
             class="text-light">&times;</span></button>
-        <h4 class="d-inline-block text-light float-right mb-0" style="
+            <div class="d-inline-block text-light mb-0" style="width: calc(100% - 80px);
         text-transform: uppercase;
         letter-spacing: 2px;
         font-size: 100%;
-    ">Choose your Filters</h4>
+    ">Filter Panel</div>
+        </div>
+        
+        
+    
+    <!-- Searchbar Bootstrap-->
+    <div class="bootstrap-iso">
+      <li class="search-bar">
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm" style="background-color:#7090F0;">
+              <i class="fas fa-search fa-md" style="color:#FFFFFF!important;"></i></span>
+          </div>
+          <input type="text" class="form-control" placeholder="Search you data.." aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-sm">
+        </div>
+      </li>
+    </div>
+    <!--End Searchbar BS-->
       </header>
+      
       <div class="bs-canvas-content px-3 py-5">
         <!-- Filters Content-->
-        <!-- Searchbar Bootstrap-->
-        <div class="bootstrap-iso">
-          <li class="search-bar">
-            <div class="input-group input-group-sm mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-sm" style="background-color:#7090F0;">
-                  <i class="fas fa-search fa-md" style="color:#FFFFFF!important;"></i></span>
-              </div>
-              <input type="text" class="form-control" placeholder="Search you data.." aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm">
-            </div>
-          </li>
-        </div>
-        <!--End Searchbar BS-->
+        
         <!--BS Content Placeholders temp-->
         <div class="bs-canvas-content px-3 py-5">
           <div class="card mb-5">
