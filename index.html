@@ -45,27 +45,30 @@
             LOGO
           </div>
           <!-- End LOGO-->
-          
-          <!---- Filter icon-->
+
+          <!---- Filter/Bookmarks/Selections icons-->
           <div class="right_menu">
             <ul>
               <li>
-                <i class="fas fa-remove" data-toggle="tooltip" data-placement="bottom" title="Clear All Selections" data-animation="true" data-delay='{"show":"1000", "hide":"100"}'></i>
+                <i class="fas fa-remove" data-toggle="tooltip" data-placement="bottom" title="Clear All Selections"
+                  data-animation="true" data-delay='{"show":"1000", "hide":"100"}'></i>
               </li>
               <li>
-                <i class="fas fa-check-circle" data-toggle="tooltip" data-placement="bottom" title="Current Selections" data-animation="true" data-delay='{"show":"1000", "hide":"100"}'></i>
+                <i class="fas fa-check-circle" data-toggle="tooltip" data-placement="bottom" title="Current Selections"
+                  data-animation="true" data-delay='{"show":"1000", "hide":"100"}'></i>
               </li>
               <li>
-                <i class="fas fa-bookmark" data-toggle="tooltip" data-placement="bottom" title="Bookmarks" data-animation="true" data-delay='{"show":"1000", "hide":"100"}'></i>
+                <i class="fas fa-bookmark" data-toggle="tooltip" data-placement="bottom" title="Bookmarks"
+                  data-animation="true" data-delay='{"show":"1000", "hide":"100"}'></i>
               </li>
-              <li data-placement="bottom" title="Filters" data-animation="true" data-delay='{"show":"1000", "hide":"100"}'
-                  data-toggle="canvas" data-target="#bs-canvas-right" aria-expanded="false"
-                  aria-controls="bs-canvas-right">
+              <li data-placement="bottom" title="Filters" data-animation="true"
+                data-delay='{"show":"1000", "hide":"100"}' data-toggle="canvas" data-target="#bs-canvas-right"
+                aria-expanded="false" aria-controls="bs-canvas-right">
                 <i class="fas fa-filter"></i>
               </li>
-            </ul>  
+            </ul>
           </div>
-          <!--End Filter icon-->
+          <!--End Filter/Bookmarks/Selections icons-->
         </div>
       </div>
       <!--End Top Bar-->
@@ -104,17 +107,17 @@
         <!--End Side Bar-->
         <!-- Context Container-->
         <div class="container">
-         <!--  <header class="intro">
+          <!--  <header class="intro">
             <h1>------ </h1>
           </header> -->
           <div class="item">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab a nesciunt doloribus. Explicabo minus cumque,
-          molestiae tempore repellendus iusto enim maiores pariatur officiis perferendis excepturi, ut dolore laborum
-          eligendi laudantium placeat aspernatur! Quos dolorum unde officiis labore est animi excepturi neque,
-          provident, inventore nobis expedita facilis aspernatur, nihil in atque?
+            molestiae tempore repellendus iusto enim maiores pariatur officiis perferendis excepturi, ut dolore laborum
+            eligendi laudantium placeat aspernatur! Quos dolorum unde officiis labore est animi excepturi neque,
+            provident, inventore nobis expedita facilis aspernatur, nihil in atque?
           </div>
           <div class="item">
-           ------
+            ------
           </div>
           <div class="item">
             ------
@@ -131,9 +134,13 @@
     <div id="bs-canvas-right" class="bs-canvas bs-canvas-anim bs-canvas-right position-fixed bg-light h-100"
       data-offset="true" data-overlay="false">
       <header class="bs-canvas-header p-3-change-rem bg-change-green overflow-auto">
-        <button type="button" class="bs-canvas-close float-left close" aria-label="Close"><span aria-hidden="true"
+        <button type="button" data-toggle="tooltip" data-placement="bottom" title="Close Filter Panel" class="bs-canvas-close float-left close" aria-label="Close"><span aria-hidden="true"
             class="text-light">&times;</span></button>
-        <h4 class="d-inline-block text-light mb-0" style="margin-left: 45%;">Filters</h4>
+        <h4 class="d-inline-block text-light float-right mb-0" style="
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 100%;
+    ">Choose your Filters</h4>
       </header>
       <div class="bs-canvas-content px-3 py-5">
         <!-- Filters Content-->
@@ -141,17 +148,65 @@
         <div class="bootstrap-iso">
           <li class="search-bar">
             <div class="input-group input-group-sm mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-sm" style="background-color:#004D40;">
-                        <i class="fas fa-search fa-md" style="color:white!important;"></i></span>
-                </div>
-                <input type="text" class="form-control" placeholder="Search you data.."
-                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm" style="background-color:#7090F0;">
+                  <i class="fas fa-search fa-md" style="color:#FFFFFF!important;"></i></span>
+              </div>
+              <input type="text" class="form-control" placeholder="Search you data.." aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm">
             </div>
-        </li>
+          </li>
         </div>
         <!--End Searchbar BS-->
-
+        <!--BS Content Placeholders temp-->
+        <div class="bs-canvas-content px-3 py-5">
+          <div class="card mb-5">
+            <div class="card-header">
+              Featured
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <form>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Email address</label>
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Example select</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect2">Example multiple select</label>
+              <select multiple="" class="form-control" id="exampleFormControlSelect2">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Example textarea</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="formControlRange">Example Range input</label>
+              <input type="range" class="form-control-range" id="formControlRange">
+            </div>
+            <p class="text-center mb-0"><button type="submit" class="btn btn-primary">Submit</button></p>
+          </form>
+        </div>
+        <!--End BS Content Placeholders temp-->
         <!-- End Filters Content-->
       </div>
     </div>

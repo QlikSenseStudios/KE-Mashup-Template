@@ -15,7 +15,7 @@
 }
 
 .top_navbar{
-  background: #80CBC4;
+  background: #303F5D;
   height: 60px;
   display: flex;
   position: fixed;
@@ -25,7 +25,7 @@
 
 .top_navbar .hamburger{
   width: 80px;
-  background: #004D40;
+  background: #192234;
   position: relative;
   font-size: 28px;
 }
@@ -43,7 +43,7 @@
 .top_navbar .hamburger__inner > div{
   width: 30px;
   height: 2px;
-  background: #fff;
+  background: #FFFFFF;
   position: absolute;
   top: 0;
   left: 0;
@@ -68,9 +68,10 @@
 }
 
 .top_navbar .menu .logo{
-  color: #004D40;
+  color: #EDF0F5;
   text-transform: uppercase;
   letter-spacing: 2px;
+  font-size: 1rem;
 }
 
 .top_navbar .menu .right_menu ul{
@@ -82,47 +83,24 @@
   padding: 0 15px;
 }
 
+.top_navbar .menu .right_menu ul li:hover,
+.top_navbar .menu .right_menu ul li.active{
+  background: #303F5D;
+  color: #7090F0;
+}
 .top_navbar .menu .right_menu ul li .fas{
   font-size: 22px;
   cursor: pointer;
-  color: #004D40;
+  color: #7090F0;
 }
-
-.top_navbar .menu .right_menu ul li .profile_dd{
-  position: absolute;
-  top: 35px;
-  right: -10px;
-  background: #fff;
-  box-shadow: 0 0 2px rgba(0,0,0,0.5);
-  padding: 10px 0;
-  width: 180px;
-  border-radius: 3px;
-  display: none;
-  user-select: none;
-}
-
-.top_navbar .menu .right_menu ul li .profile_dd.active{
-  display: block;
-}
-
-.top_navbar .menu .right_menu ul li .profile_dd .dd_item{
-  padding: 10px;
+.top_navbar .menu .right_menu ul li .fas:hover,
+ top_navbar .menu .right_menu ul li .fas:active{
+  font-size: 22px;
   cursor: pointer;
-  color: #004D40;
+  background: #303F5D;
+  color: #ffffff;
 }
 
-.top_navbar .menu .right_menu ul li .profile_dd .dd_item:hover{
-  background: #E0F2F1;
-}
-
-.top_navbar .menu .right_menu ul li .profile_dd:before{
-  content: "";
-  position: absolute;
-  top: -20px;
-  right: 10px;
-  border: 10px solid;
-  border-color: transparent transparent #fff transparent;
-}
 
 .main_container .sidebar{
   position: fixed;
@@ -130,7 +108,7 @@
   left: 0;
   width: 225px;
   height: 100%;
-  background: #004D40;
+  background: #192234;
   transition: all 0.3s ease;
 }
 
@@ -141,25 +119,19 @@
 .main_container .sidebar .profile{
   display: flex;
   align-items: center;
-  color: #fff;
+  color: #FFFFFF;
   padding: 20px 0;
   white-space: nowrap;
   transition: all 0.3s ease;
+  
 }
 .profile_info{
   margin-left: 35%;
 }
-.main_container .sidebar .profile .img{
-  padding: 0 18px;
-}
-
-.main_container .sidebar .profile img{
-   width: 45px;
-}
 
 .main_container .sidebar .profile p:first-child{
-  font-size: 14px;
-  color: #80CBC4;
+  font-size: 1rem;
+  color: #FFFFFF;
   margin-bottom: 3px;
 }
 
@@ -193,8 +165,8 @@
 
 .main_container .sidebar ul li a:hover,
 .main_container .sidebar ul li a.active{
-  background: #fff;
-  color: #004D40;
+  background: #303F5D;
+  color: #7090F0;
 }
 
 .main_container .container .item{
@@ -256,14 +228,16 @@
 }
 
 .p-3-change-rem{
-  padding: 0.98rem!important;
+  padding: 3rem!important;
 }
 .bg-change-green{
-  background-color: #106c5d!important;
+  background-color: #192234!important;
 }
 
-
+.bootstrap-iso .text-light {
+  color: #FFFFFF!important;
+}
 .search-bar {
   margin: 15px auto 0 auto;
-  width: 35rem;
+  width: 90%;
 }
