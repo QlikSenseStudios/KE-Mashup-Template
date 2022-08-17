@@ -16,61 +16,7 @@
   <link rel="stylesheet" href="css/demo.css">
   <!-- Bootstrap CSS CDN -->
   <link rel="stylesheet" href="css/bootstrap-iso.min.css">
-  <script>
-    $(document).ready(function () {
-      /**** JS logic for Menu Icon  *****/
-      $(".hamburger .hamburger__inner").click(function () {
-        $(".wrapper").toggleClass("active")
-      })
-      /**** JS logic for Filter Pane *****
-      Refer https://as-tx.github.io/bootstrap-off-canvas-sidebar/offset-overlay-full-demo.html#
-      ****/
-      var bsDefaults = {
-        offset: false,
-        overlay: true,
-        width: '600px'
-      },
-        bsMain = $('.bs-offset-main'),
-        bsOverlay = $('.bs-canvas-overlay');
-      $('[data-toggle="canvas"][aria-expanded="false"]').on('click', function () {
-        var canvas = $(this).data('target'),
-          opts = $.extend({}, bsDefaults, $(canvas).data()),
-          prop = $(canvas).hasClass('bs-canvas-right') ? 'margin-right' : 'margin-left';
-        if (opts.width === '100%')
-          opts.offset = false;
-        $(canvas).css('width', opts.width);
-        if (opts.offset && bsMain.length)
-          bsMain.css(prop, opts.width);
-        $(canvas + ' .bs-canvas-close').attr('aria-expanded', "true");
-        $('[data-toggle="canvas"][data-target="' + canvas + '"]').attr('aria-expanded', "true");
-        if (opts.overlay && bsOverlay.length)
-          bsOverlay.addClass('show');
-        return false;
-      });
-      $('.bs-canvas-close, .bs-canvas-overlay').on('click', function () {
-        var canvas, aria;
-        if ($(this).hasClass('bs-canvas-close')) {
-          canvas = $(this).closest('.bs-canvas');
-          aria = $(this).add($('[data-toggle="canvas"][data-target="#' + canvas.attr('id') + '"]'));
-          if (bsMain.length)
-            bsMain.css(($(canvas).hasClass('bs-canvas-right') ? 'margin-right' : 'margin-left'), '');
-        } else {
-          canvas = $('.bs-canvas');
-          aria = $('.bs-canvas-close, [data-toggle="canvas"]');
-          if (bsMain.length)
-            bsMain.css({
-              'margin-left': '',
-              'margin-right': ''
-            });
-        }
-        canvas.css('width', '');
-        aria.attr('aria-expanded', "false");
-        if (bsOverlay.length)
-          bsOverlay.removeClass('show');
-        return false;
-      });
-    })
-  </script>
+  <script src="js/index.js"></script>
 </head>
 
 <body>
@@ -99,25 +45,15 @@
             LOGO
           </div>
           <!-- End LOGO-->
-          <!-- Searchbar Bootstrap-->
-          <div class="bootstrap-iso">
-            <li class="search-bar">
-              <div class="input-group input-group-sm mb-3">
-                  <div class="input-group-prepend">
-                      <span class="input-group-text" id="inputGroup-sizing-sm" style="background-color:#004D40;">
-                          <i class="fas fa-search fa-md" style="color:white!important;"></i></span>
-                  </div>
-                  <input type="text" class="form-control" placeholder="Search you data.."
-                      aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-              </div>
-          </li>
-          </div>
-          <!--End Searchbar BS-->
+          
           <!---- Filter icon-->
           <div class="right_menu">
             <ul>
               <li>
-                <i class="fas fa-bell" data-toggle="tooltip" data-placement="bottom" title="Current Selections" data-animation="true" data-delay='{"show":"1000", "hide":"100"}'></i>
+                <i class="fas fa-remove" data-toggle="tooltip" data-placement="bottom" title="Clear All Selections" data-animation="true" data-delay='{"show":"1000", "hide":"100"}'></i>
+              </li>
+              <li>
+                <i class="fas fa-check-circle" data-toggle="tooltip" data-placement="bottom" title="Current Selections" data-animation="true" data-delay='{"show":"1000", "hide":"100"}'></i>
               </li>
               <li>
                 <i class="fas fa-bookmark" data-toggle="tooltip" data-placement="bottom" title="Bookmarks" data-animation="true" data-delay='{"show":"1000", "hide":"100"}'></i>
@@ -201,7 +137,20 @@
       </header>
       <div class="bs-canvas-content px-3 py-5">
         <!-- Filters Content-->
-        ...
+        <!-- Searchbar Bootstrap-->
+        <div class="bootstrap-iso">
+          <li class="search-bar">
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm" style="background-color:#004D40;">
+                        <i class="fas fa-search fa-md" style="color:white!important;"></i></span>
+                </div>
+                <input type="text" class="form-control" placeholder="Search you data.."
+                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            </div>
+        </li>
+        </div>
+        <!--End Searchbar BS-->
 
         <!-- End Filters Content-->
       </div>
