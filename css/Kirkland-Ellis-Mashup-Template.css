@@ -357,7 +357,21 @@ article p{
   background: #555; 
 }
 /*** End CSS for scrollbar in filter pane ***/
-
+.bootstrap-iso p{
+letter-spacing: 0.8px;
+}
+.bootstrap-iso .card-header {
+letter-spacing: 1.3px!important;
+}
+.bootstrap-iso .card-title{
+letter-spacing: 1.3px!important; 
+}
+.bootstrap-iso label{
+letter-spacing: 1.3px!important; 
+}
+.bootstrap-iso .btn-primary{
+letter-spacing: 1.3px;;
+}
 /* End CSS for Filter Pane utilizing bootstrap ***/
 
 /***Qlik Object Styles***/
