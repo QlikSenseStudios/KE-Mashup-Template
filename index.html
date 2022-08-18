@@ -8,13 +8,11 @@
   <script src="js/fontawesomeKitConfig.js"></script>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="js/jquery.slim.min.js"></script>
-  <script src="popper.min.js"></script>
+<!--   <script src="popper.min.js"></script> -->
   <script src="js/bootstrap.min.js"></script>
-  <!-- SideBar-Menu CSS -->
+  <!-- Main Styles CSS -->
   <link rel="stylesheet" href="css/styles.css">
-  <!-- Demo CSS -->
-  <link rel="stylesheet" href="css/demo.css">
-  <!-- Bootstrap CSS CDN -->
+   <!-- Bootstrap CSS CDN -->
   <link rel="stylesheet" href="css/bootstrap-iso.min.css">
   <script src="js/index.js"></script>
 </head>
@@ -87,17 +85,17 @@
                   <a class="nav-link active" id="v-pills-page1-tab" data-toggle="pill" href="#v-pills-page1" role="tab"
                     aria-controls="v-pills-page1" aria-selected="true">
                     <span class="icon"><i class="fas fa-home"></i></span>
-                    <span class="title">Page 1</span>
+                    <span class="title">DASHBOARD</span>
                   </a>
                   <a class="nav-link" id="v-pills-page2-tab" data-toggle="pill" href="#v-pills-page2" role="tab"
                     aria-controls="v-pills-page3" aria-selected="true">
                     <span class="icon"><i class="fas fa-chart-pie"></i></span>
-                    <span class="title">Page 2</span>
+                    <span class="title">ANALYTICS</span>
                   </a>
                   <a class="nav-link" id="v-pills-page3-tab" data-toggle="pill" href="#v-pills-page3" role="tab"
                     aria-controls="v-pills-page3" aria-selected="true">
                     <span class="icon"><i class="fas fa-border-all"></i></span>
-                    <span class="title">Page 3</span>
+                    <span class="title">GLOSSARY</span>
                   </a>
                 </div>
               </li>
@@ -139,10 +137,13 @@
         "> 
           <button type="button" data-toggle="tooltip" data-placement="bottom" title="Close Filter Panel" class="bs-canvas-close close" aria-label="Close"><span aria-hidden="true"
             class="text-light">&times;</span></button>
-            <div class="d-inline-block text-light mb-0" style="width: calc(100% - 80px);
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-size: 100%;
+            <div class="d-inline-block text-light mb-0" style="
+             width: calc(100% - 80px);
+             text-transform: uppercase;
+             letter-spacing: 1.5px;
+             font-size: 1rem;
+             font-weight: 500;
+             color: #ffffff!important;
     ">Filter Panel</div>
         </div>
         
@@ -171,7 +172,25 @@
         <div class="bs-canvas-content px-3 py-5">
           <div class="card mb-5">
             <div class="card-header">
-              Featured
+              Date Filters
+            </div>
+            <div class="card-body">
+              
+            </div>
+          </div>
+          <div class="card mb-5">
+            <div class="card-header">
+              Advanced Filters
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <div class="card mb-5">
+            <div class="card-header">
+              Sliders
             </div>
             <div class="card-body">
               <h5 class="card-title">Special title treatment</h5>
@@ -181,10 +200,6 @@
           </div>
           <form>
             <div class="form-group">
-              <label for="exampleFormControlInput1">Email address</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-            </div>
-            <div class="form-group">
               <label for="exampleFormControlSelect1">Example select</label>
               <select class="form-control" id="exampleFormControlSelect1">
                 <option>1</option>
@@ -193,20 +208,6 @@
                 <option>4</option>
                 <option>5</option>
               </select>
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlSelect2">Example multiple select</label>
-              <select multiple="" class="form-control" id="exampleFormControlSelect2">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlTextarea1">Example textarea</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
             <div class="form-group">
               <label for="formControlRange">Example Range input</label>
