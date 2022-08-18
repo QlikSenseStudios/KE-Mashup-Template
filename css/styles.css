@@ -232,6 +232,7 @@ article p{
   transition: all 0.3s ease;
 }
 
+
 .main_container .sidebar ul li a{
   color: #7090F0;
     font-size: 16px;
@@ -358,3 +359,11 @@ article p{
 /*** End CSS for scrollbar in filter pane ***/
 
 /* End CSS for Filter Pane utilizing bootstrap ***/
+
+/***Qlik Object Styles***/
+.qvplaceholder, .qvobject {
+	flex: 1 1 auto;
+	height: 300px;
+	margin: 45px 0 0 45px;
+	background-color: #f8f9fa;
+}
