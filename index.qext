@@ -1,6 +1,6 @@
 {
-	"type": "mashup-template",
-	"name": "Kirkland & Ellis Mashup Template",
+	"type": "mashup",
+	"name": "Kirkland & Ellis Mashup",
 	"description": "Kirkland & Ellis Mashup Template",
 	"version": "1.0.0",
 	"author": "Karthik Burra",

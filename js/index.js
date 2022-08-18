@@ -1,4 +1,7 @@
-/* var prefix = window.location.pathname.substr(0,window.location.pathname.toLowerCase().lastIndexOf("/extensions") + 1);
+/* var prefix = window.location.pathname.substr(
+  0,
+  window.location.pathname.toLowerCase().lastIndexOf("/extensions") + 1
+);
 
 var config = {
   host: window.location.hostname,
@@ -6,6 +9,32 @@ var config = {
   port: window.location.port,
   isSecure: window.location.protocol === "https:"
 };
+
+var app;
+
+var appRequire = require.config({
+  context: "appRequire",
+  baseUrl: "./",
+  paths: {
+    jquery: "https://code.jquery.com/jquery-3.3.1.min",
+    jqueryui: "https://code.jquery.com/ui/1.12.1/jquery-ui.min",
+    bootstrap:
+      "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min",
+    bootstrapSelect:
+      "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min"
+  },
+  shim: {
+    jqueryui: {
+      deps: ["jquery"]
+    },
+    bootstrap: {
+      deps: ["jquery", "jqueryui"]
+    },
+    bootstrapSelect: {
+      deps: ["jquery", "jqueryui", "bootstrap"]
+    }
+  }
+});
 
 require.config({
   baseUrl:
@@ -17,30 +46,42 @@ require.config({
 });
 
 require(["js/qlik"], function(qlik) {
-  qlik.setOnError(function(error) {
-    $("#popupText").append(error.message + "<br>");
-    $("#popup").fadeIn(1000);
-  });
-  $("#closePopup").click(function() {
-    $("#popup").hide();
-  });
-	
+  //callbacks -- inserted here --
   //open apps -- inserted here --
-	var app = qlik.openApp('Nutra_Green_Sales_BAStart.qvf', config);
+
+  // EXPORTING QLIK TO GLOBAL SCOPE
+  window.qlik = qlik;
+  // EXPOERTING APP TO GLOBAL SCOPE
+  window.app = app;
+
+  function AppUi(app) {
+    //Require app.js
+    require({ context: "appRequire" }, ["app/app.js"]);
+  }
 
   //get objects -- inserted here --
-	
-	
-	
-	app.getObject('CurrentSelections','CurrentSelections');
-	
+
+  if ( app ) {
+    new AppUi( app )
+  }
+
+}); */
+
+
+require.config({
+  baseUrl: 'lib',
+  paths: {
+    jquery: "../js/jquery.slim.min",
+    bootstrap:"../js/bootstrap.bundle.min"
+  },
+  shim: {
+    bootstrap: {
+      deps: ["jquery"]
+    }
+  }
 });
 
-
- */
-
-
-
+require(['../app/app.js'])
 
 
 $(document).ready(function () {

@@ -1,8 +1,7 @@
-Kirkland-Ellis-Mashup-Template.qext;
-Kirkland-Ellis-Mashup-Template.html;
-Kirkland-Ellis-Mashup-Template.js;
-Kirkland-Ellis-Mashup-Template.css;
-css/bootstrap-iso.min.css
-js/fontawesomeKitConfig.js
-js/jquery.slim.min.js
-js/bootstrap.min.js
+index.qext;
+index.js;
+index.html;
+index.css;
+lib/require.js
+app/app.js
+js/fontawesomeKit.js
