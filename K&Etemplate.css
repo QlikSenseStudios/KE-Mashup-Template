@@ -66,7 +66,7 @@ main{
 article li{
    color: #444;
    font-size: 15px;
-   margin-left: 33px;
+   margin-left: 1px;
    line-height: 1.5;
    padding: 5px;
 }
@@ -377,7 +377,12 @@ letter-spacing: 1.3px;;
 /***Qlik Object Styles***/
 .qvplaceholder, .qvobject {
 	flex: 1 1 auto;
-	height: 300px;
-	margin: 45px 0 0 45px;
-	background-color: #f8f9fa;
+    height: 2.5rem;
+    width: 100%;
+    background-color: #192234;
+    letter-spacing: 0.8px;
+}
+.qv-collapsed-listbox .title-wrapper .title{
+color: #7090F0!important;
+letter-spacing: 0.8px!important;
 }
