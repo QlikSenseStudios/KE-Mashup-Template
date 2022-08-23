@@ -318,6 +318,77 @@ top_navbar .menu .right_menu ul li .fas:active {
   letter-spacing: 1.3px;
 }
 /* End CSS for Filter Pane utilizing bootstrap ***/
+/**for notifications ***/
+#selections {
+  padding-right: 20px;
+}
+.notification {
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+}
+.notification .badge {
+  position: absolute;
+  top: -12px;
+  right: 21px;
+  font-weight: 300;
+  padding: 2px 6px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+}
+#currSelections {
+  display: flex;
+  flex-direction: column;
+}
+.selected-field-container {
+  display: flex;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  line-height: 22px;
+  background: #edf0f5;
+  border: 1px solid rgb(210, 220, 221);
+  border-radius: 6px;
+  width: calc(100% - 27px);
+  margin: 4px 16px 6px;
+  padding: 9px;
+  cursor: pointer;
+  box-shadow: 0 6px 10px rgb(0 0 0 / 8%), 0 0 6px rgb(0 0 0 / 5%);
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+}
+.selected-field-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+.selected-field-container .selected-field {
+  padding-right: 10px;
+  font-weight: bold;
+  color: #7090f0 !important;
+}
+.selected-field-container .clear-field {
+  font-size: 18px;
+  margin-left: auto;
+  font-weight: bold;
+  color: red;
+  padding-right: 20px;
+  cursor: pointer;
+}
+/**end of notifications***/
+/***modal for selections***/
+.bootstrap-iso .modal-header .close {
+  color: #ffffff !important;
+}
+.bootstrap-iso .modal-header {
+  background-color: #192234 !important;
+  color: #ffffff !important;
+}
+.bootstrap-iso .modal-footer {
+  background-color: #192234 !important;
+}
+/***end of modal for selections***/
 /***Qlik Object Styles***/
 .filterObject {
   width: 100%;
@@ -326,11 +397,21 @@ top_navbar .menu .right_menu ul li .fas:active {
 .qvplaceholder,
 .qvobject {
   flex: 1 1 auto;
-  height: 2.5rem;
+  height: 2.2rem;
   width: 100px;
   float: left;
   margin-left: 10px;
   letter-spacing: 0.8px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+  cursor: pointer;
+}
+.qvplaceholder,
+.qvobject:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 }
 .qv-collapsed-listbox .title-wrapper {
   background-color: #edf0f5;
