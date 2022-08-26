@@ -60,25 +60,7 @@
           <!---- Filter/Bookmarks/Selections icons-->
           <div class="right_menu">
             <ul>
-              <li title="Undo" data-control="back" data-toggle="tooltip">
-                <i class="fas fa-undo-alt"></i>
-              </li>
-              <li title="Forward" data-control="forward" data-toggle="tooltip">
-                <i class="fas fa-redo-alt"></i>
-              </li>
-              <li title="Clear All Selections" data-control="clear" data-toggle="tooltip">
-                <i class="fas fa-times-circle"></i>
-              </li>
-              <li href="#" class="notification" title="Selections">
-                <i class="fas fa-check-circle" data-toggle="modal" data-target="#selectionsModal"></i>
-                <span id="selections" style="cursor: pointer;" class="icon" data-toggle="tooltip"
-                  data-placement="bottom" title="Current Selections"></span>
-                <span class="badge"></span>
-              </li>
-              <li>
-                <i class="fas fa-bookmark" data-toggle="tooltip" data-placement="bottom" title="Bookmarks"></i>
-              </li>
-              <li data-placement="bottom" title="Filters" data-toggle="canvas" data-target="#bs-canvas-right"
+              <li data-placement="bottom" title="Filter Panel" data-toggle="canvas" data-target="#bs-canvas-right"
                 aria-expanded="false" aria-controls="bs-canvas-right">
                 <i class="fas fa-filter"></i>
               </li>
@@ -133,7 +115,7 @@
             provident, inventore nobis expedita facilis aspernatur, nihil in atque?
           </div>
           <div class="item">
-            -------------
+            -----------
           </div>
           <div class="item">
             ------
@@ -149,114 +131,112 @@
   <div class="bootstrap-iso">
     <div id="bs-canvas-right" class="bs-canvas bs-canvas-anim bs-canvas-right position-fixed bg-light h-100"
       data-offset="true" data-overlay="false">
-      <header class="bs-canvas-header p-3-change-rem bg-change-green overflow-auto">
-        <div style="display:flex;justify-content: space-between;
-        align-items: center;
-        ">
-          <button type="button" data-toggle="tooltip" data-placement="bottom" title="Close Filter Panel"
-            class="bs-canvas-close close" aria-label="Close"><span aria-hidden="true"
-              class="text-light">×</span></button>
-          <div class="d-inline-block text-light mb-0" style="
-             width: calc(100% - 80px);
-             text-transform: uppercase;
-             letter-spacing: 1.5px;
-             font-size: 1rem;
-             font-weight: 500;
-             color: #ffffff!important;
-    ">Filter Panel</div>
-        </div>
-        <!-- Searchbar Bootstrap-->
-        <!-- <div class="bootstrap-iso">
-          <li class="search-bar">
-            <div class="input-group input-group-sm mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-sm" style="background-color:#7090F0;">
-                  <i class="fas fa-search fa-md" style="color:#FFFFFF!important;"></i></span>
-              </div>
-              <input type="text" class="form-control" placeholder="Search you data.." aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-            </div>
-          </li>
-        </div>
-		 -->
-        <!--End Searchbar BS-->
+      <header class="bs-canvas-header p-3 bg-danger" style="
+    background-color: #192234!important;">
+        <h4 class="d-inline-block text-light mb-0" style="
+    color: #edf0f5!important;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+">Filter Panel</h4>
+        <button type="button" class="bs-canvas-close close" aria-label="Close" aria-expanded="true"><span
+            aria-hidden="true" class="text-light">×</span></button>
       </header>
-      <div class="bs-canvas-content px-3 py-5">
-        <!-- Filters Content-->
-        <!--BS Content Placeholders temp-->
-        <div class="bs-canvas-content px-3 py-5">
-          <div class="card mb-5">
-            <div class="card-header">
-              Filters
+      <!-- Tabs -->
+      <ul class="nav nav-pills" id="pills-tab" role="tablist" style="justify-content:center">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="pills-filters-tab" data-toggle="pill" data-target="#pills-filters"
+            type="button" role="tab" aria-controls="pills-filters" aria-selected="true">Filters</button>
+        </li>
+        <li class="notification">
+          <button class="nav-link" id="selectionsModalLabel" data-toggle="pill" data-target="#selectionsModal"
+            type="button" role="tab" aria-controls="selectionsModal" aria-selected="false">Selections
+          </button>
+          <span class="badge"></span>
+        </li>
+      </ul>
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-filters" role="tabpanel" aria-labelledby="pills-filters-tab">
+          <!-- Filters Content-->
+          <!--BS Content Placeholders temp-->
+          <div class="bs-canvas-content px-3 py-5" style="padding-top: 1rem!important;">
+            <div class="card mb-5">
+              <div class="card-header">
+                Filters
+              </div>
+              <div class="card-body">
+                <div class="filterObject">
+                  <div id="QV01" class="qvobject">
+                  </div>
+                  <div id="QV02" class="qvobject">
+                  </div>
+                  <div id="QV03" class="qvobject">
+                  </div>
+                  <div id="QV04" class="qvobject">
+                  </div>
+                  <div id="QV05" class="qvobject">
+                  </div>
+                  <div id="QV06" class="qvobject">
+                  </div>
+                  <div id="QV07" class="qvobject">
+                  </div>
+                  <div id="QV08" class="qvobject">
+                  </div>
+                  <div id="QV09" class="qvobject">
+                  </div>
+                  <div id="QV10" class="qvplaceholder">
+                  </div>
+                  <div id="QV11" class="qvplaceholder">
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="card-body">
-              <div class="filterObject">
-                <div id="QV01" class="qvplaceholder">
-                </div>
-                <div id="QV02" class="qvplaceholder">
-                </div>
-                <div id="QV03" class="qvplaceholder">
-                </div>
-                <div id="QV04" class="qvplaceholder">
-                </div>
-                <div id="QV05" class="qvplaceholder">
-                </div>
-                <div id="QV06" class="qvplaceholder">
-                </div>
-                <div id="QV07" class="qvplaceholder">
-                </div>
-                <div id="QV08" class="qvplaceholder">
-                </div>
-                <div id="QV09" class="qvplaceholder">
-                </div>
-                <div id="QV10" class="qvplaceholder">
-                </div>
-                <div id="QV11" class="qvplaceholder">
+            <div class="card mb-5">
+              <div class="card-header">
+                Sliders
+              </div>
+              <div class="card-body">
+              </div>
+            </div>
+          </div>
+          <!--End BS Content Placeholders temp-->
+          <!-- End Filters Content-->
+        </div>
+        <div class="tab-pane fade show active" id="selectionsModal" role="tabpanel"
+          aria-labelledby="selectionsModalLabel">
+          <div class="bs-canvas-content px-3 py-5" style="padding-top: 1rem!important;">
+            <div class="card mb-5">
+              <div class="card-header">
+                Current Selections
+              </div>
+              <div class="card-body">
+                <div class="filterObject">
+                  <div id="currSelections">
+                  </div>
+                  <br>
+                  <div>
+                    <span class="pqt-minus" title="Undo" data-control="back" data-toggle="tooltip"><i
+                        class="fas fa-undo-alt"></i></span>
+                    <button class="cart-button">
+                      <span class="add-to-cart" title="Clear All Selections" data-control="clear"
+                        data-toggle="tooltip">Clear All</span>
+                      <span class="added"></span>
+                      <i class="fas fa-times-circle" data-control="clear"></i>
+                    </button>
+                    <span class="pqt-plus" title="Forward" data-control="forward" data-toggle="tooltip"><i
+                        class="fas fa-redo-alt"></i></span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="card mb-5">
-            <div class="card-header">
-              Advanced Filters
-            </div>
-            <div class="card-body">
-            </div>
-          </div>
-          <div class="card mb-5">
-            <div class="card-header">
-              Sliders
-            </div>
-            <div class="card-body">
-            </div>
-          </div>
         </div>
-        <!--End BS Content Placeholders temp-->
-        <!-- End Filters Content-->
+        <!---Tab 2 Selections Content ---->
+        <!--- End Tab 2 Selections Content ---->
       </div>
+      <!--  End Tabs -->
     </div>
   </div>
   <!-- End Filter Section Panel-->
-  <!--Selections Modal--->
-  <div class="bootstrap-iso">
-    <div class="modal fade" id="selectionsModal" tabindex="-1" role="dialog" aria-labelledby="selectionsModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="selectionsModalLabel">Selections</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div id="currSelections" class="modal-body">
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--------End Selections Modal---------------------->
 </body>
 </html>

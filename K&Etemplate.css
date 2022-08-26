@@ -73,14 +73,6 @@ article p {
   font-size: 15px;
   line-height: 1.5;
 }
-@media only screen and (min-width: 720px) {
-  main {
-    max-width: 720px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 24px;
-  }
-}
 .wrapper {
   width: 100%;
   height: 100%;
@@ -271,9 +263,6 @@ top_navbar .menu .right_menu ul li .fas:active {
   -moz-transition: all 0.4s ease-out;
   -ms-transition: all 0.4s ease-out;
 }
-.p-3-change-rem {
-  padding: 3rem !important;
-}
 .bg-change-green {
   background-color: #192234 !important;
 }
@@ -302,6 +291,9 @@ top_navbar .menu .right_menu ul li .fas:active {
   background: #555;
 }
 /*** End CSS for scrollbar in filter pane ***/
+.bootstrap-iso .py-5 {
+    padding-top: 1rem!important;
+}
 .bootstrap-iso p {
   letter-spacing: 0.8px;
 }
@@ -329,11 +321,11 @@ top_navbar .menu .right_menu ul li .fas:active {
 }
 .notification .badge {
   position: absolute;
-  top: -12px;
-  right: 21px;
+  top: -10px;
+    right: -10px!important;
   font-weight: 300;
   padding: 2px 6px;
-  border-radius: 50%;
+  border-radius: 50%!important;
   background: red;
   color: white;
 }
@@ -377,18 +369,13 @@ top_navbar .menu .right_menu ul li .fas:active {
   cursor: pointer;
 }
 /**end of notifications***/
-/***modal for selections***/
-.bootstrap-iso .modal-header .close {
-  color: #ffffff !important;
+.bootstrap-iso .nav-pills .nav-link {
+    border-radius: 0rem!important;
 }
-.bootstrap-iso .modal-header {
-  background-color: #192234 !important;
-  color: #ffffff !important;
+.bootstrap-iso .nav-pills .nav-link.active, .bootstrap-iso .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #303f5d!important;
 }
-.bootstrap-iso .modal-footer {
-  background-color: #192234 !important;
-}
-/***end of modal for selections***/
 /***Qlik Object Styles***/
 .filterObject {
   width: 100%;
@@ -398,9 +385,9 @@ top_navbar .menu .right_menu ul li .fas:active {
 .qvobject {
   flex: 1 1 auto;
   height: 2.2rem;
-  width: 100px;
+  width: 100%;
   float: left;
-  margin-left: 10px;
+  margin-bottom: 15px;
   letter-spacing: 0.8px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
   transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
@@ -443,3 +430,39 @@ top_navbar .menu .right_menu ul li .fas:active {
     box-shadow: inset 0 -1px 0 0 #00000026;
     color: #fff;
 }*/
+@media only screen and (min-width: 720px) {
+  main {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 24px;
+  }
+}
+.cart-button {
+  position: relative;
+  padding: 10px;
+  border: 0;
+  border-radius: 10px;
+  background-color: #2b3044;
+  outline: none;
+  cursor: pointer;
+  margin: 0 10px;
+  color: #fff;
+   overflow: hidden;
+   user-select: none; 
+}
+.pqt-plus,
+.pqt-minus {
+  border: none;
+  font-size: 20px;
+  padding: 0 20px;
+  width: 50px;
+  border-radius: 10px;
+  height: 50px;
+  user-select: none; 
+  line-height: 50px;
+}
+.pqt-plus:hover,
+.pqt-minus:hover {
+  cursor: pointer;
+}
