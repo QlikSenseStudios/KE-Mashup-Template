@@ -6,8 +6,16 @@
   text-decoration: none;
   font-family: "Arial";
 }
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 body {
-  font-style: normal;
   font-weight: 300;
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
@@ -21,6 +29,27 @@ body {
   margin-bottom: 15px;
   line-height: 1.5;
 }
+/*Loading*/
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  left: 45%;
+    position: absolute;
+    top: 50%;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+.loaderParent{
+    height: 100vh;
+    width: 100%;
+    background: white;
+	display:none
+}
+
+/*Loading Ends*/
 .intro h1 {
   font-size: 18pt;
   padding-bottom: 15px;
@@ -188,7 +217,7 @@ top_navbar .menu .right_menu ul li .fas:active {
   margin-top: 60px;
   width: calc(100% - 225px);
   margin-left: 225px;
-  padding: 30px;
+  padding: 0px 30px;
   transition: all 0.3s ease;
 }
 .main_container .sidebar ul li a {
@@ -215,16 +244,6 @@ top_navbar .menu .right_menu ul li .fas:active {
 .main_container .sidebar ul li a.active {
   background: #303f5d;
   color: #ffffff;
-}
-.main_container .container .item {
-  background: #fff;
-  border: 1px solid #e0f2f1;
-  margin-bottom: 30px;
-  padding: 20px;
-  font-size: 13px;
-  letter-spacing: 1.5px;
-  font-weight: 500;
-  line-height: 22px;
 }
 /* after adding active class */
 .wrapper.active .sidebar {
@@ -326,8 +345,53 @@ top_navbar .menu .right_menu ul li .fas:active {
   font-weight: 300;
   padding: 2px 6px;
   border-radius: 50%!important;
-  background: red;
+  background: #dc423f;
   color: white;
+}
+.notification1{
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+}
+.badge1 {
+   position: absolute;
+   font-weight: 300;
+  padding: 0px 4px;
+  border-radius: 50%!important;
+  background: #dc423f;
+  color: white;
+}
+.notification2{
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+}
+.notification2 .badge2 {
+   position: absolute;
+  top: -30px;
+    right: -10px!important;
+  font-weight: 300;
+  padding: 0px 4px;
+  border-radius: 50%!important;
+  background: #dc423f;
+  color: white;
+  border: 1px solid #000;
+}
+.notification3{
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+}
+.notification3 .badge3 {
+   position: absolute;
+  top: -30px;
+    right: -10px!important;
+  font-weight: 300;
+  padding: 0px 4px;
+  border-radius: 50%!important;
+  background: #dc423f;
+  color: white;
+  border: 1px solid #000;
 }
 #currSelections {
   display: flex;
@@ -376,67 +440,11 @@ top_navbar .menu .right_menu ul li .fas:active {
     color: #fff;
     background-color: #303f5d!important;
 }
-/***Qlik Object Styles***/
-.filterObject {
-  width: 100%;
-  margin: 0 auto;
+.bootstrap-iso .card-body {
+     box-shadow: 5px 5px 5px 0px rgb(0 0 0 / 20%)!important;
 }
-.qvplaceholder,
-.qvobject {
-  flex: 1 1 auto;
-  height: 2.2rem;
-  width: 100%;
-  float: left;
-  margin-bottom: 15px;
-  letter-spacing: 0.8px;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
-  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
-    0.3s box-shadow,
-    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
-  cursor: pointer;
-}
-.qvplaceholder,
-.qvobject:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
-}
-.qv-collapsed-listbox .title-wrapper {
-  background-color: #edf0f5;
-}
-.qv-collapsed-listbox .title-wrapper .title {
-  color: #7090f0 !important;
-  letter-spacing: 0.8px !important;
-}
-.lui-popover-container {
-  position: fixed !important;
-  z-index: 10000 !important;
-}
-/*for filters to display inside filter pane*/
-.qv-object.qv-object-filterpane {
-  display: flex !important;
-}
-/*
-.qv-listbox .serverSelected, .qv-listbox li.selected {
-    background-color: #655dc6!important;
-    border-bottom: 1px solid #655dc6!important;
-    color: #fff;
-	}
-.qv-state-count-bar .state.selected {
-    background: #655dc6!important;
-}
-.sel-toolbar-list li .sel-toolbar-confirm {
-    background-color: #655dc6!important;
-    border: 1px solid #0000;
-    box-shadow: inset 0 -1px 0 0 #00000026;
-    color: #fff;
-}*/
-@media only screen and (min-width: 720px) {
-  main {
-    max-width: 720px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 24px;
-  }
+.grey-bg {  
+    background-color: #F5F7FA;
 }
 .cart-button {
   position: relative;
@@ -466,3 +474,92 @@ top_navbar .menu .right_menu ul li .fas:active {
 .pqt-minus:hover {
   cursor: pointer;
 }
+/***Qlik Object Styles***/
+.filterObject {
+  width: 100%;
+  margin: 0 auto;
+}
+.filterObject .qvobject {
+height:2.2rem;
+  width: 100%;
+}
+.qvplaceholder,
+.qvobject {
+  flex: 1 1 auto;
+  width: 100%;
+  float: left;
+  margin-bottom: 25px;
+  letter-spacing: 0.8px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+  cursor: pointer;
+}
+.qvplaceholder,
+.qvobject:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+.qv-object .qv-inner-object {
+    height: 100%;
+}
+.qv-collapsed-listbox .title-wrapper {
+  background-color: #edf0f5;
+}
+.qv-collapsed-listbox .title-wrapper .title {
+  color: #7090f0 !important;
+  letter-spacing: 0.8px !important;
+}
+/*for filters and other objects to display inside filter pane*/
+.qv-object.qv-object-filterpane {
+  display: flex !important;
+}
+.qv-object.qv-object-qlik-variable-input {
+  display: flex !important;
+}
+.qv-object.qv-object-qlik-date-picker {
+  display: flex !important;
+}
+.qvchart {
+    height: 500px;
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.20)  
+}
+.lui-popover-container {
+  position: fixed !important;
+  z-index: 10000 !important;
+}
+.qlik-daterangepicker.dropdown-menu {
+    position: fixed !important;
+    z-index: 1000!important;
+}
+.qv-object.qv-object-qlik-variable-input {
+    display: flex !important;
+    height: 100px!important;
+}
+.qv-listbox .serverSelected, .qv-listbox li.selected {
+    background-color: #655dc6!important;
+    border-bottom: 1px solid #655dc6!important;
+    color: #fff;
+	}
+.qv-state-count-bar .state.selected {
+    background: #655dc6!important;
+}
+.sel-toolbar-list li .sel-toolbar-confirm {
+    background-color: #655dc6!important;
+    border: 1px solid #0000;
+    box-shadow: inset 0 -1px 0 0 #00000026;
+    color: #fff;
+}
+@media only screen and (min-width: 720px) {
+  main {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 24px;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+  /*#bs-canvas-right {width:100% !important}*/
+  .wrapper:not(.active) .sidebar{width:100vw!important;z-index:100}
+} 
