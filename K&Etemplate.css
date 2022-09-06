@@ -34,7 +34,6 @@ body {
   --n:5;    /* control the number of stripes */
   --s:30px; /* control the width of stripes */
   --g:5px;  /* control the gap between stripes */
-  
   width:calc(var(--n)*(var(--s) + var(--g)) - var(--g));
   height:30px;
   padding:var(--g);
@@ -332,7 +331,28 @@ top_navbar .menu .right_menu ul li .fas:active {
   letter-spacing: 1.3px;
 }
 /* End CSS for Filter Pane utilizing bootstrap ***/
-/**for notifications ***/
+/**for Bookmarks and notifications ***/
+/* Bookmark */
+.list-group {
+    padding-top: 20px
+}
+.list-group-item {
+    display: flex;
+    align-items: center
+}
+.list-group-item .bm-title-text {
+    cursor: pointer;
+}
+.list-group-item .bm-title-desc {
+    cursor: pointer;
+    padding-left: 10px;
+}
+.list-group .list-group-item i {
+    cursor: pointer;
+    margin-left: auto;
+    padding: 0 10px;
+}
+/* Current Selections */
 #selections {
   padding-right: 20px;
 }
@@ -350,51 +370,6 @@ top_navbar .menu .right_menu ul li .fas:active {
   border-radius: 50%!important;
   background: #dc423f;
   color: white;
-}
-.notification1{
-  text-decoration: none;
-  position: relative;
-  display: inline-block;
-}
-.badge1 {
-   position: absolute;
-   font-weight: 300;
-  padding: 0px 4px;
-  border-radius: 50%!important;
-  background: #dc423f;
-  color: white;
-}
-.notification2{
-  text-decoration: none;
-  position: relative;
-  display: inline-block;
-}
-.notification2 .badge2 {
-   position: absolute;
-  top: -30px;
-    right: -10px!important;
-  font-weight: 300;
-  padding: 0px 4px;
-  border-radius: 50%!important;
-  background: #dc423f;
-  color: white;
-  border: 1px solid #000;
-}
-.notification3{
-  text-decoration: none;
-  position: relative;
-  display: inline-block;
-}
-.notification3 .badge3 {
-   position: absolute;
-  top: -30px;
-    right: -10px!important;
-  font-weight: 300;
-  padding: 0px 4px;
-  border-radius: 50%!important;
-  background: #dc423f;
-  color: white;
-  border: 1px solid #000;
 }
 #currSelections {
   display: flex;
@@ -564,5 +539,8 @@ height:2.2rem;
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
   /*#bs-canvas-right {width:100% !important}*/
+  #bookmark {
+        margin-left: auto;
+    }
   .wrapper:not(.active) .sidebar{width:100vw!important;z-index:100}
 } 

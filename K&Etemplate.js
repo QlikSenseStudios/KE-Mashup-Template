@@ -28,12 +28,8 @@ require(["js/qlik"], function (qlik) {
   $("#closePopup").click(function () {
     $("#popup").hide();
   });
-  
- 
-  
   //open apps -- inserted here --
  // var app = qlik.openApp("Nutra_Green_Sales_BAStart.qvf", config);
-
   //Logic for Reload Time
   /*app.getAppLayout().then((e)=>
   {
@@ -42,14 +38,10 @@ require(["js/qlik"], function (qlik) {
 	 $('[class="reloadTime"]').text(reloadTime);
   }
   )*/
-  
-
   //get objects -- inserted here --
-	
   //app.getObject("QVChart02", "Sqf");
   //app.getObject('QVChart01','AgRhJR');
   //Once we have dragged and dropped qlik objects on qv placeholders -> we get the qv objects and to use the on/off (to control what viz to show on click of tabs), we switch the code to app.visualization
-  
   /*
   app.visualization.get("AgRhJR").then(function (vis) {
     $("#QVChart01").is(":visible") && vis.show("QVChart01");
@@ -62,10 +54,8 @@ require(["js/qlik"], function (qlik) {
 	  vis.close();
 	  console.log('QVChart01 removed')
    }
-  
       window.q = vis;
     });
-	
   });
   app.visualization.get("Sqf").then(function (vis) {
     $("#QVChart01").is(":visible") && vis.show("QVChart02");
@@ -78,17 +68,11 @@ require(["js/qlik"], function (qlik) {
 	  vis.close();
 	  console.log('QVChart02 removed')
    }
-  
       window.q = vis;
     });
-	
   });
   */
-
-
-  
   //callbacks -- inserted here --
-
 /*
   function KPIHours(reply, app) {
     $("#QVKPI2")[0].innerText =
@@ -174,9 +158,6 @@ require(["js/qlik"], function (qlik) {
     KPIHours
   );
 */
-
-
-
   //Grab Current Selections
   /*
   app.getList("SelectionObject", function (reply) {
@@ -229,7 +210,6 @@ require(["js/qlik"], function (qlik) {
     });
   });
   */
-
   //selections Navigation
   /*
   $("[data-control]").click(function () {
@@ -248,6 +228,60 @@ require(["js/qlik"], function (qlik) {
         break;
     }
   });*/
+/*
+ //Upon Click of Bookmark New
+ $("#newBm").click(function() {
+  $("#formModal").toggle(true);
+  $("#createBm").prop("disabled", false);
+  $("#newBm").prop("disabled", true);
+});
+//Create Bookmark
+$("#createBm").click(function() {
+  var title = $("#bmTitle").val();
+  var desc = $("#bmDesc").val();
+  //apply bookmark
+  app.bookmark.create(title, desc).then(function(){
+    //save app
+    app.doSave();
+  });
+  $("#bmTitle").val("");
+  $("#bmDesc").val("");
+});
+//Return List of Bookmarks
+app.getList("BookmarkList", function(reply) {
+  var str = "";
+  reply.qBookmarkList.qItems.forEach(function(value) {
+    str +=
+      '<li class="list-group-item"><a class="list-container" data-id="' +
+      value.qInfo.qId +
+      '">' +
+      '<span class="bm-title-text">' +
+      value.qData.title +
+      "</span>" +
+      '<span class="bm-title-desc">' +
+      value.qData.description +
+      "</span></a>" +
+      '<i class="fas fa-trash"' +
+      'data-id="' +
+      value.qInfo.qId +
+      '"></i></li>';
+  });
+  $(".list-group").html(str);
+  $(".list-container").click(function() {
+    var id = $(this).data("id");
+    app.bookmark.apply(id);
+    $("#bookmarkModal").modal("hide");
+  });
+  $(".fa-trash").click(function() {
+    var id = $(this).data("id");
+    app.bookmark.remove(id).then(function(){
+      //save app
+      app.doSave();
+    });
+    $("#bookmarkModal").modal("hide");
+  });
+});
+*/
   // find the bootstrap tab changing event
   // invoke qlik.resize(); in it
   // This is used for resizing qlik charts when the navigation tabs and filter/selections tabs are triggered
@@ -257,8 +291,6 @@ require(["js/qlik"], function (qlik) {
       });
   // This is used for resizing qlik charts when the filter panel and navigation side bar are triggered
   $('[data-toggle="canvas"][aria-expanded="false"],.bs-canvas-close,.hamburger').on('click', function() {
- 
 	setTimeout(()=>{ console.log('resize');qlik.resize()}, 500);
-   
   });
 });

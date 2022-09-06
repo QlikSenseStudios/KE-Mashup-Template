@@ -56,6 +56,10 @@
             <!---- Filter/Bookmarks/Selections icons-->
             <div class="right_menu">
                 <ul>
+				<li data-placement="bottom" title="Bookmarks" data-toggle="modal" data-target="#bookmarkModal"
+                        aria-expanded="false" aria-controls="bs-canvas-right">
+                        <i class="fas fa-bookmark"></i>
+                    </li>
                     <li data-placement="bottom" title="Filter Panel" data-toggle="canvas" data-target="#bs-canvas-right"
                         aria-expanded="false" aria-controls="bs-canvas-right">
                         <i class="fas fa-filter"></i>
@@ -513,6 +517,36 @@
     </div><!-- ./ End Off-canvas sidebar markup, right -->
     </div>
     <!-- ************************************************** ./End Filter Section Panel ********************************************** -->
+	<!-- ************************************************** Bookmark Modal ********************************************** -->
+	<div class="bootstrap-iso">
+    <div class="modal fade" id="bookmarkModal" tabGooglePlayMashup="-1" role="dialog" aria-labelledby="bookmarkModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="bookmarkModalLabel">Bookmarks</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form id="formModal">
+                    <label for="bmTitle" class="control-label">Title:</label>
+                    <input type="text" class="form-control" id="bmTitle"></input>
+                    <label for="bmDesc" class="control-label">Description:</label>
+                    <input type="text" class="form-control" id="bmDesc"></input>
+                </form>
+                <ul class="list-group">
+                </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" id="newBm">New</button>
+              <button type="button" class="btn btn-primary" id="createBm" disabled data-dismiss="modal">Create</button>
+            </div>
+          </div>
+        </div>
+      </div>
+	  </div>
+	   <!-- ************************************************** ./End Bookmark Modal ********************************************** -->
     <!-- ************************************************* ./End Body Section ************************************************* -->
 </body>
 </html>

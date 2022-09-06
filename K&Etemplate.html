@@ -56,6 +56,10 @@
             <!---- Filter/Bookmarks/Selections icons-->
             <div class="right_menu">
                 <ul>
+				<li data-placement="bottom" title="Bookmarks" data-toggle="modal" data-target="#bookmarkModal"
+                        aria-expanded="false" aria-controls="bs-canvas-right">
+                        <i class="fas fa-bookmark"></i>
+                    </li>
                     <li data-placement="bottom" title="Filter Panel" data-toggle="canvas" data-target="#bs-canvas-right"
                         aria-expanded="false" aria-controls="bs-canvas-right">
                         <i class="fas fa-filter"></i>
@@ -234,7 +238,7 @@
                                                     <div style="height:500px">
                                                         <!-- Viz Chart 01 -->
                                                         <div id="QVChart01" style="height:100%;width:100%"
-                                                            class="qvplaceholder">
+                                                            class="qvobject">
                                                             <div class="loader"></div>
                                                         </div>
                                                     </div>
@@ -252,7 +256,7 @@
                                                     <div style="height:500px">
                                                         <!-- Viz Chart 02 -->
                                                         <div id="QVChart02" style="height:100%;width:100%"
-                                                            class="qvplaceholder">
+                                                            class="qvobject">
                                                             <div class="loader"></div>
                                                         </div>
                                                     </div>
@@ -269,7 +273,7 @@
                                                     <div style="height:500px">
                                                         <!-- Viz Chart 03 -->
                                                         <div id="QVChart03" style="height:100%;width:100%"
-                                                            class="qvplaceholder">
+                                                            class="qvobject">
                                                             <div class="loader"></div>
                                                         </div>
                                                     </div>
@@ -282,7 +286,7 @@
                                                     <div style="height:500px">
                                                         <!-- Viz Chart 04 -->
                                                         <div id="QVChart04" style="height:100%;width:100%"
-                                                            class="qvplaceholder">
+                                                            class="qvobject">
                                                             <div class="loader"></div>
                                                         </div>
                                                     </div>
@@ -297,7 +301,7 @@
                                                     <div style="height:500px">
                                                         <!-- Viz Chart 05 -->
                                                         <div id="QVChart05" style="height:100%;width:100%"
-                                                            class="qvplaceholder">
+                                                            class="qvobject">
                                                             <div class="loader"></div>
                                                         </div>
                                                     </div>
@@ -310,7 +314,7 @@
                                                     <div style="height:500px">
                                                         <!-- Viz Chart 06 -->
                                                         <div id="QVChart06" style="height:100%;width:100%"
-                                                            class="qvplaceholder">
+                                                            class="qvobject">
                                                             <div class="loader"></div>
                                                         </div>
                                                     </div>
@@ -339,7 +343,7 @@
                                                     <div style="height:500px">
                                                         <!-- Viz Chart 07 -->
                                                         <div id="QVChart07" style="height:100%;width:100%"
-                                                            class="qvplaceholder">
+                                                            class="qvobject">
                                                             <div class="loader"></div>
                                                         </div>
                                                     </div>
@@ -427,22 +431,22 @@
                     <!-- Filters Tab Content-->
                     <div class="bs-canvas-content px-3 py-5" style="padding-top: 1rem!important;">
                         <div class="filterObject">
-                            <div id="QV01" class="qvplaceholder"></div>
-                            <div id="QV02" class="qvplaceholder">
+                            <div id="QV01" class="qvobject"></div>
+                            <div id="QV02" class="qvobject">
                             </div>
-                            <div id="QV03" class="qvplaceholder">
+                            <div id="QV03" class="qvobject">
                             </div>
-                            <div id="QV04" class="qvplaceholder">
+                            <div id="QV04" class="qvobject">
                             </div>
-                            <div id="QV05" class="qvplaceholder">
+                            <div id="QV05" class="qvobject">
                             </div>
                         </div>
                         <div class="filterObject">
-                            <div id="QV06" class="qvplaceholder">
+                            <div id="QV06" class="qvobject">
                             </div>
                             <br>
                             <br>
-                            <div id="QV07" class="qvplaceholder">
+                            <div id="QV07" class="qvobject">
                             </div>
                             <br>
                             <br>
@@ -450,7 +454,7 @@
                             </div>
                             <br>
                             <br>
-                            <div id="QV10" class="qvplaceholder">
+                            <div id="QV10" class="qvobject">
                             </div>
                             <br>
                             <br>
@@ -513,6 +517,36 @@
     </div><!-- ./ End Off-canvas sidebar markup, right -->
     </div>
     <!-- ************************************************** ./End Filter Section Panel ********************************************** -->
+	<!-- ************************************************** Bookmark Modal ********************************************** -->
+	<div class="bootstrap-iso">
+    <div class="modal fade" id="bookmarkModal" tabGooglePlayMashup="-1" role="dialog" aria-labelledby="bookmarkModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="bookmarkModalLabel">Bookmarks</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form id="formModal">
+                    <label for="bmTitle" class="control-label">Title:</label>
+                    <input type="text" class="form-control" id="bmTitle"></input>
+                    <label for="bmDesc" class="control-label">Description:</label>
+                    <input type="text" class="form-control" id="bmDesc"></input>
+                </form>
+                <ul class="list-group">
+                </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" id="newBm">New</button>
+              <button type="button" class="btn btn-primary" id="createBm" disabled data-dismiss="modal">Create</button>
+            </div>
+          </div>
+        </div>
+      </div>
+	  </div>
+	   <!-- ************************************************** ./End Bookmark Modal ********************************************** -->
     <!-- ************************************************* ./End Body Section ************************************************* -->
 </body>
 </html>
