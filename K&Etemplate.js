@@ -32,26 +32,25 @@ require(["js/qlik"], function (qlik) {
  
   
   //open apps -- inserted here --
-  var app = qlik.openApp("Nutra_Green_Sales_BAStart.qvf", config);
+ // var app = qlik.openApp("Nutra_Green_Sales_BAStart.qvf", config);
+
   //Logic for Reload Time
-  app.getAppLayout().then((e)=>
+  /*app.getAppLayout().then((e)=>
   {
   console.log('reload time received')
   var reloadTime = e.layout.qLastReloadTime;
 	 $('[class="reloadTime"]').text(reloadTime);
   }
-  )
-  window.qlik = qlik;
-  window.app=app;
+  )*/
+  
+
   //get objects -- inserted here --
-	app.getObject('QVChart07','dRmyeqf');
-	app.getObject('QVChart06','xLwPNAh');
-	app.getObject('QVChart04','vpREJB');
-	app.getObject('QVChart05','WrTk');
-	app.getObject('QVChart03','wDkVFV');
+	
   //app.getObject("QVChart02", "Sqf");
   //app.getObject('QVChart01','AgRhJR');
   //Once we have dragged and dropped qlik objects on qv placeholders -> we get the qv objects and to use the on/off (to control what viz to show on click of tabs), we switch the code to app.visualization
+  
+  /*
   app.visualization.get("AgRhJR").then(function (vis) {
     $("#QVChart01").is(":visible") && vis.show("QVChart01");
     $(".nav-tabs > a").on("shown.bs.tab", function () {
@@ -84,16 +83,13 @@ require(["js/qlik"], function (qlik) {
     });
 	
   });
-  app.getObject("QV10", "DPbBaUJ");
-  app.getObject("QV09", "SQuTJpD");
-  app.getObject("QV06", "ZLSRZ");
-  app.getObject("QV07", "MFpX");
-  app.getObject("QV05", "AdxGz");
-  app.getObject("QV04", "qPkDqhp");
-  app.getObject("QV03", "EqpwebF");
-  app.getObject("QV02", "svseAV");
-  app.getObject("QV01", "UbLKVfv");
+  */
+
+
+  
   //callbacks -- inserted here --
+
+/*
   function KPIHours(reply, app) {
     $("#QVKPI2")[0].innerText =
       reply.qHyperCube.qDataPages[0].qMatrix[0][0].qText;
@@ -177,7 +173,12 @@ require(["js/qlik"], function (qlik) {
     },
     KPIHours
   );
+*/
+
+
+
   //Grab Current Selections
+  /*
   app.getList("SelectionObject", function (reply) {
     $selections = $("#currSelections");
     $selections.html("");
@@ -227,7 +228,10 @@ require(["js/qlik"], function (qlik) {
       app.field(field).clear();
     });
   });
+  */
+
   //selections Navigation
+  /*
   $("[data-control]").click(function () {
     var $element = $(this);
     switch (
@@ -243,7 +247,7 @@ require(["js/qlik"], function (qlik) {
         app.forward();
         break;
     }
-  });
+  });*/
   // find the bootstrap tab changing event
   // invoke qlik.resize(); in it
   // This is used for resizing qlik charts when the navigation tabs and filter/selections tabs are triggered
