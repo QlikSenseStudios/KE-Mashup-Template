@@ -28,31 +28,72 @@ require(["js/qlik"], function (qlik) {
   $("#closePopup").click(function () {
     $("#popup").hide();
   });
+  
+ 
+  
   //open apps -- inserted here --
   var app = qlik.openApp("Nutra_Green_Sales_BAStart.qvf", config);
-  //window.qlik = qlik;
+  //Logic for Reload Time
+  app.getAppLayout().then((e)=>
+  {
+  console.log('reload time received')
+  var reloadTime = e.layout.qLastReloadTime;
+	 $('[class="reloadTime"]').text(reloadTime);
+  }
+  )
+  window.qlik = qlik;
+  window.app=app;
   //get objects -- inserted here --
+	app.getObject('QVChart07','dRmyeqf');
+	app.getObject('QVChart06','xLwPNAh');
+	app.getObject('QVChart04','vpREJB');
+	app.getObject('QVChart05','WrTk');
+	app.getObject('QVChart03','wDkVFV');
   //app.getObject("QVChart02", "Sqf");
   //app.getObject('QVChart01','AgRhJR');
-  /*
+  //Once we have dragged and dropped qlik objects on qv placeholders -> we get the qv objects and to use the on/off (to control what viz to show on click of tabs), we switch the code to app.visualization
   app.visualization.get("AgRhJR").then(function (vis) {
     $("#QVChart01").is(":visible") && vis.show("QVChart01");
     $(".nav-tabs > a").on("shown.bs.tab", function () {
-      $("#QVChart01").is(":visible") ? vis.show("QVChart01") : vis.close();
-      console.log(`First Viz loaded`);
+      if($("#QVChart01").is(":visible")){
+	  vis.show("QVChart01")
+	  console.log('QVChart01 shown')
+	  }
+	  else{
+	  vis.close();
+	  console.log('QVChart01 removed')
+   }
+  
       window.q = vis;
     });
+	
   });
   app.visualization.get("Sqf").then(function (vis) {
-    $("#QVChart02").is(":visible") && vis.show("QVChart02");
+    $("#QVChart01").is(":visible") && vis.show("QVChart02");
     $(".nav-tabs > a").on("shown.bs.tab", function () {
-      $("#QVChart02").is(":visible") ? vis.show("QVChart02") : vis.close();
-      console.log(`Second Viz loaded`);
-    });
-  });*/
- 
-  //callbacks -- inserted here --
+      if($("#QVChart02").is(":visible")){
+	  vis.show("QVChart02")
+	  console.log('QVChart02 shown')
+	  }
+	  else{
+	  vis.close();
+	  console.log('QVChart02 removed')
+   }
   
+      window.q = vis;
+    });
+	
+  });
+  app.getObject("QV10", "DPbBaUJ");
+  app.getObject("QV09", "SQuTJpD");
+  app.getObject("QV06", "ZLSRZ");
+  app.getObject("QV07", "MFpX");
+  app.getObject("QV05", "AdxGz");
+  app.getObject("QV04", "qPkDqhp");
+  app.getObject("QV03", "EqpwebF");
+  app.getObject("QV02", "svseAV");
+  app.getObject("QV01", "UbLKVfv");
+  //callbacks -- inserted here --
   function KPIHours(reply, app) {
     $("#QVKPI2")[0].innerText =
       reply.qHyperCube.qDataPages[0].qMatrix[0][0].qText;
@@ -205,15 +246,15 @@ require(["js/qlik"], function (qlik) {
   });
   // find the bootstrap tab changing event
   // invoke qlik.resize(); in it
-  $('[data-toggle="pill"]').on("shown.bs.tab", function () {
+  // This is used for resizing qlik charts when the navigation tabs and filter/selections tabs are triggered
+  $('a[data-toggle="tab"],[data-toggle="pill"]').on("shown.bs.tab", function () {
+  	 console.log('resize')
     qlik.resize();
-    // Some code you want to run when tab is clicked (before the tab is shown)
-  });
-  $(".right_menu").on("shown.bs.collapse", function () {
-    qlik.resize();
-    // Some code you want to run when tab is clicked (before the tab is shown)
-  });
-  $('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
-    qlik.resize();
+      });
+  // This is used for resizing qlik charts when the filter panel and navigation side bar are triggered
+  $('[data-toggle="canvas"][aria-expanded="false"],.bs-canvas-close,.hamburger').on('click', function() {
+ 
+	setTimeout(()=>{ console.log('resize');qlik.resize()}, 500);
+   
   });
 });
