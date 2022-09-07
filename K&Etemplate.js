@@ -28,136 +28,85 @@ require(["js/qlik"], function (qlik) {
   $("#closePopup").click(function () {
     $("#popup").hide();
   });
+
   //open apps -- inserted here --
- // var app = qlik.openApp("Nutra_Green_Sales_BAStart.qvf", config);
+
   //Logic for Reload Time
-  /*app.getAppLayout().then((e)=>
-  {
-  console.log('reload time received')
-  var reloadTime = e.layout.qLastReloadTime;
-	 $('[class="reloadTime"]').text(reloadTime);
-  }
-  )*/
+  app.getAppLayout().then((e) => {
+    console.log("reload time received");
+    var reloadTime = e.layout.qLastReloadTime;
+    $('[class="reloadTime"]').text(reloadTime);
+  });
+
   //get objects -- inserted here --
-  //app.getObject("QVChart02", "Sqf");
-  //app.getObject('QVChart01','AgRhJR');
-  //Once we have dragged and dropped qlik objects on qv placeholders -> we get the qv objects and to use the on/off (to control what viz to show on click of tabs), we switch the code to app.visualization
-  /*
-  app.visualization.get("AgRhJR").then(function (vis) {
-    $("#QVChart01").is(":visible") && vis.show("QVChart01");
-    $(".nav-tabs > a").on("shown.bs.tab", function () {
-      if($("#QVChart01").is(":visible")){
-	  vis.show("QVChart01")
-	  console.log('QVChart01 shown')
-	  }
-	  else{
-	  vis.close();
-	  console.log('QVChart01 removed')
-   }
-      window.q = vis;
-    });
-  });
-  app.visualization.get("Sqf").then(function (vis) {
-    $("#QVChart01").is(":visible") && vis.show("QVChart02");
-    $(".nav-tabs > a").on("shown.bs.tab", function () {
-      if($("#QVChart02").is(":visible")){
-	  vis.show("QVChart02")
-	  console.log('QVChart02 shown')
-	  }
-	  else{
-	  vis.close();
-	  console.log('QVChart02 removed')
-   }
-      window.q = vis;
-    });
-  });
-  */
+
   //callbacks -- inserted here --
-/*
-  function KPIHours(reply, app) {
+
+  /*
+	function KPIhc(reply, app){
+	$("#QVKPI1")[0].innerText =
+      reply.qHyperCube.qDataPages[0].qMatrix[0][0].qText;
     $("#QVKPI2")[0].innerText =
-      reply.qHyperCube.qDataPages[0].qMatrix[0][0].qText;
-  }
-  function DealsKPI(reply, app) {
-    $("#QVKPI1")[0].innerText =
-      reply.qHyperCube.qDataPages[0].qMatrix[0][0].qText;
-  }
-  //create cubes and lists -- inserted here --
-  app.createCube(
-    {
-      qInitialDataFetch: [
-        {
-          qHeight: 20,
-          qWidth: 1,
-        },
-      ],
-      qDimensions: [],
-      qMeasures: [
-        {
-          qDef: {
-            qDef: "pick(ceil(log10(sum(LineSalesAmount))/3),\r\n\n          num(sum(LineSalesAmount),'#,##0.0'),\n\n          num(sum(LineSalesAmount)/1000,'#,##0.0 K'),\n\n          num(sum(LineSalesAmount)/1000000,'#,##0.0 M')\n\n     )   & ''",
-          },
-          qLabel: "Deals",
-          qLibraryId: null,
-          qSortBy: {
-            qSortByState: 0,
-            qSortByFrequency: 0,
-            qSortByNumeric: 0,
-            qSortByAscii: 1,
-            qSortByLoadOrder: 0,
-            qSortByExpression: 0,
-            qExpression: {
-              qv: " ",
-            },
-          },
-        },
-      ],
-      qSuppressZero: false,
-      qSuppressMissing: false,
-      qMode: "S",
-      qInterColumnSortOrder: [],
-      qStateName: "$",
-    },
-    DealsKPI
-  );
-  app.createCube(
-    {
-      qInitialDataFetch: [
-        {
-          qHeight: 20,
-          qWidth: 1,
-        },
-      ],
-      qDimensions: [],
-      qMeasures: [
-        {
-          qDef: {
-            qDef: "Count(Country)",
-          },
-          qLabel: "Count(Country)",
-          qLibraryId: null,
-          qSortBy: {
-            qSortByState: 0,
-            qSortByFrequency: 0,
-            qSortByNumeric: 0,
-            qSortByAscii: 1,
-            qSortByLoadOrder: 0,
-            qSortByExpression: 0,
-            qExpression: {
-              qv: " ",
-            },
-          },
-        },
-      ],
-      qSuppressZero: false,
-      qSuppressMissing: false,
-      qMode: "S",
-      qInterColumnSortOrder: [],
-      qStateName: "$",
-    },
-    KPIHours
-  );
+      reply.qHyperCube.qDataPages[0].qMatrix[0][1].qText;
+	}
 */
+
+  /*
+  //create cubes and lists -- inserted here --
+	app.createCube({
+	"qInitialDataFetch": [
+		{
+			"qHeight": 20,
+			"qWidth": 2
+		}
+	],
+	"qDimensions": [],
+	"qMeasures": [
+		{
+			"qDef": {
+				"qDef": "pick(ceil(log10(sum(LineSalesAmount))/3),\r\n\n          num(sum(LineSalesAmount),'#,##0.0'),\n\n          num(sum(LineSalesAmount)/1000,'#,##0.0 K'),\n\n          num(sum(LineSalesAmount)/1000000,'#,##0.0 M')\n\n     )   & ''"
+			},
+			"qLabel": "pick(ceil(log10(sum(LineSalesAmount))/3),\r\n\n          num(sum(LineSalesAmount),'#,##0.0'),\n\n          num(sum(LineSalesAmount)/1000,'#,##0.0 K'),\n\n          num(sum(LineSalesAmount)/1000000,'#,##0.0 M')\n\n     )   & ''",
+			"qLibraryId": null,
+			"qSortBy": {
+				"qSortByState": 0,
+				"qSortByFrequency": 0,
+				"qSortByNumeric": 0,
+				"qSortByAscii": 1,
+				"qSortByLoadOrder": 0,
+				"qSortByExpression": 0,
+				"qExpression": {
+					"qv": " "
+				}
+			}
+		},
+		{
+			"qDef": {
+				"qDef": "Count(Country)"
+			},
+			"qLabel": "Count(Country)",
+			"qLibraryId": null,
+			"qSortBy": {
+				"qSortByState": 0,
+				"qSortByFrequency": 0,
+				"qSortByNumeric": 0,
+				"qSortByAscii": 1,
+				"qSortByLoadOrder": 0,
+				"qSortByExpression": 0,
+				"qExpression": {
+					"qv": " "
+				}
+			}
+		}
+	],
+	"qSuppressZero": false,
+	"qSuppressMissing": false,
+	"qMode": "S",
+	"qInterColumnSortOrder": [],
+	"qStateName": "$"
+	},KPIhc);
+*/
+
   //Grab Current Selections
   /*
   app.getList("SelectionObject", function (reply) {
@@ -208,8 +157,7 @@ require(["js/qlik"], function (qlik) {
       var field = $(this).parent().attr("id");
       app.field(field).clear();
     });
-  });
-  */
+  });*/
   //selections Navigation
   /*
   $("[data-control]").click(function () {
@@ -228,69 +176,118 @@ require(["js/qlik"], function (qlik) {
         break;
     }
   });*/
-/*
- //Upon Click of Bookmark New
- $("#newBm").click(function() {
-  $("#formModal").toggle(true);
-  $("#createBm").prop("disabled", false);
-  $("#newBm").prop("disabled", true);
-});
-//Create Bookmark
-$("#createBm").click(function() {
-  var title = $("#bmTitle").val();
-  var desc = $("#bmDesc").val();
-  //apply bookmark
-  app.bookmark.create(title, desc).then(function(){
-    //save app
-    app.doSave();
+
+  //Upon Click of Bookmark New
+  /*
+  $("#newBm").click(function() {
+    $("#formModal").toggle(true);
+    $("#createBm").prop("disabled", false);
+    $("#newBm").prop("disabled", true);
   });
-  $("#bmTitle").val("");
-  $("#bmDesc").val("");
-});
-//Return List of Bookmarks
-app.getList("BookmarkList", function(reply) {
-  var str = "";
-  reply.qBookmarkList.qItems.forEach(function(value) {
-    str +=
-      '<li class="list-group-item"><a class="list-container" data-id="' +
-      value.qInfo.qId +
-      '">' +
-      '<span class="bm-title-text">' +
-      value.qData.title +
-      "</span>" +
-      '<span class="bm-title-desc">' +
-      value.qData.description +
-      "</span></a>" +
-      '<i class="fas fa-trash"' +
-      'data-id="' +
-      value.qInfo.qId +
-      '"></i></li>';
-  });
-  $(".list-group").html(str);
-  $(".list-container").click(function() {
-    var id = $(this).data("id");
-    app.bookmark.apply(id);
-    $("#bookmarkModal").modal("hide");
-  });
-  $(".fa-trash").click(function() {
-    var id = $(this).data("id");
-    app.bookmark.remove(id).then(function(){
+
+  //Create Bookmark
+  $("#createBm").click(function() {
+    var title = $("#bmTitle").val();
+    var desc = $("#bmDesc").val();
+    //apply bookmark
+    app.bookmark.create(title, desc).then(function(){
       //save app
       app.doSave();
     });
-    $("#bookmarkModal").modal("hide");
+
+    $("#bmTitle").val("");
+    $("#bmDesc").val("");
   });
-});
-*/
+
+  //Return List of Bookmarks
+  app.getList("BookmarkList", function(reply) {
+    var str = "";
+    reply.qBookmarkList.qItems.forEach(function(value) {
+      str +=
+        '<li class="list-group-item"><a class="list-container" data-id="' +
+        value.qInfo.qId +
+        '">' +
+        '<span class="bm-title-text">' +
+        value.qData.title +
+        "</span>" +
+        '<span class="bm-title-desc">' +
+        value.qData.description +
+        "</span></a>" +
+        '<i class="fas fa-trash"' +
+        'data-id="' +
+        value.qInfo.qId +
+        '"></i></li>';
+    });
+    $(".list-group").html(str);
+    $(".list-container").click(function() {
+      var id = $(this).data("id");
+      app.bookmark.apply(id);
+      $("#bookmarkModal").modal("hide");
+    });
+    $(".fa-trash").click(function() {
+      var id = $(this).data("id");
+      app.bookmark.remove(id).then(function(){
+        //save app
+        app.doSave();
+      });
+      $("#bookmarkModal").modal("hide");
+    });
+  });
+  */
+
   // find the bootstrap tab changing event
   // invoke qlik.resize(); in it
   // This is used for resizing qlik charts when the navigation tabs and filter/selections tabs are triggered
-  $('a[data-toggle="tab"],[data-toggle="pill"]').on("shown.bs.tab", function () {
-  	 console.log('resize')
-    qlik.resize();
-      });
+  $('a[data-toggle="tab"],[data-toggle="pill"]').on(
+    "shown.bs.tab",
+    function () {
+      //console.log('resize')
+      qlik.resize();
+    }
+  );
   // This is used for resizing qlik charts when the filter panel and navigation side bar are triggered
-  $('[data-toggle="canvas"][aria-expanded="false"],.bs-canvas-close,.hamburger').on('click', function() {
-	setTimeout(()=>{ console.log('resize');qlik.resize()}, 500);
+  $(
+    '[data-toggle="canvas"][aria-expanded="false"],.bs-canvas-close,.hamburger'
+  ).on("click", function () {
+    setTimeout(() => {
+      //console.log('resize');
+      qlik.resize();
+    }, 500);
   });
-});
+
+  // make sure to get only the relevant qlik objects within active tab
+  $(".nav-tabs > a").on("shown.bs.tab", function (a) {
+    console.log(a.currentTarget.hash);
+    var objToActivate = $(a.currentTarget.hash).find(".qvobject");
+    objToActivate.each(function (index) {
+      var $obj = $(objToActivate[index]);
+      var divId = $obj.attr("id");
+      var vizId = $obj
+        .find(".qv-object-content-container div")
+        .attr("id")
+        .split("_")[0];
+      app.visualization.get(vizId).then(function (viz) {
+        viz.show(divId);
+        console.log("activate qlikId: " + vizId + " into divId: " + divId);
+      });
+    });
+  });
+
+  // hide
+  $(".nav-tabs > a").on("hide.bs.tab", function (a) {
+    console.log(a.currentTarget.hash);
+    var objsToClose = $(a.currentTarget.hash).find(".qvobject");
+    console.log(objsToClose);
+    objsToClose.each(function (index) {
+      var $obj = $(objsToClose[index]);
+      var vizId = $obj
+        .find(".qv-object-content-container div")
+        .attr("id")
+        .split("_")[0];
+      app.visualization.get(vizId).then(function (viz) {
+        console.log("close this" + vizId);
+        viz.close();
+      });
+    });
+  });
+}); //close require

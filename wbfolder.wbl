@@ -2,7 +2,6 @@ K&Etemplate.qext;
 K&Etemplate.html;
 K&Etemplate.js;
 K&Etemplate.css;
-js/lib/require.js;
 js/jquery.slim.min.js;
 js/bootstrap.bundle.min.js;
 js/fontawesomeKit.js;
