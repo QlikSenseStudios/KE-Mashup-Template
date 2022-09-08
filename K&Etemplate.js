@@ -32,7 +32,7 @@ require(["js/qlik"], function (qlik) {
   //open apps -- inserted here --
 
   //Logic for Reload Time
-  /* uncomment this Line 37-45
+  
   app.getAppLayout().then((e)=>
   {
   console.log('reload time received')
@@ -40,22 +40,21 @@ require(["js/qlik"], function (qlik) {
 	 $('[class="reloadTime"]').text(reloadTime);
   }
   )
-  */
+ 
   //get objects -- inserted here --
 
   
   //callbacks -- inserted here --
 
-  /* uncomment this 
   function KPIhc(reply, app) {
     $("#QVKPI1")[0].innerText =
       reply.qHyperCube.qDataPages[0].qMatrix[0][0].qText;
     $("#QVKPI2")[0].innerText =
       reply.qHyperCube.qDataPages[0].qMatrix[0][1].qText;
   }
-*/
+
   //create cubes and lists -- inserted here --
-    /* uncomment this 
+     
   app.createCube(
     {
       qInitialDataFetch: [
@@ -111,9 +110,9 @@ require(["js/qlik"], function (qlik) {
       qStateName: "$",
     },
     KPIhc
-  );  */
+  );  
   //Grab Current Selections
-    /* uncomment this 
+    
   app.getList("SelectionObject", function (reply) {
     $selections = $("#currSelections");
     $selections.html("");
@@ -162,9 +161,9 @@ require(["js/qlik"], function (qlik) {
       var field = $(this).parent().attr("id");
       app.field(field).clear();
     });
-  });*/
+  });
   //selections Navigation
-    /* uncomment this 
+    
   $("[data-control]").click(function () {
     var $element = $(this);
     switch (
@@ -181,9 +180,9 @@ require(["js/qlik"], function (qlik) {
         break;
     }
   });
-*/
+
   //Upon Click of Bookmark New
-    /* uncomment this 
+    
   $("#newBm").click(function () {
     $("#formModal").toggle(true);
     $("#createBm").prop("disabled", false);
@@ -238,7 +237,7 @@ require(["js/qlik"], function (qlik) {
       $("#bookmarkModal").modal("hide");
     });
   });
-*/
+
   // find the bootstrap tab changing event
   // invoke qlik.resize(); in it
   // This is used for resizing qlik charts when the navigation tabs and filter/selections tabs are triggered
