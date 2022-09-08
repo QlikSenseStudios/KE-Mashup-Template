@@ -28,33 +28,22 @@ require(["js/qlik"], function (qlik) {
   $("#closePopup").click(function () {
     $("#popup").hide();
   });
-
   //open apps -- inserted here --
-
   //Logic for Reload Time
-  
-  app.getAppLayout().then((e)=>
-  {
-  console.log('reload time received')
-  var reloadTime = e.layout.qLastReloadTime;
-	 $('[class="reloadTime"]').text(reloadTime);
-  }
-  )
- 
+  app.getAppLayout().then((e) => {
+    console.log("reload time received");
+    var reloadTime = e.layout.qLastReloadTime;
+    $('[class="reloadTime"]').text(reloadTime);
+  });
   //get objects -- inserted here --
-
-  
   //callbacks -- inserted here --
-
   function KPIhc(reply, app) {
     $("#QVKPI1")[0].innerText =
       reply.qHyperCube.qDataPages[0].qMatrix[0][0].qText;
     $("#QVKPI2")[0].innerText =
       reply.qHyperCube.qDataPages[0].qMatrix[0][1].qText;
   }
-
   //create cubes and lists -- inserted here --
-     
   app.createCube(
     {
       qInitialDataFetch: [
@@ -110,9 +99,8 @@ require(["js/qlik"], function (qlik) {
       qStateName: "$",
     },
     KPIhc
-  );  
+  );
   //Grab Current Selections
-    
   app.getList("SelectionObject", function (reply) {
     $selections = $("#currSelections");
     $selections.html("");
@@ -163,7 +151,6 @@ require(["js/qlik"], function (qlik) {
     });
   });
   //selections Navigation
-    
   $("[data-control]").click(function () {
     var $element = $(this);
     switch (
@@ -180,15 +167,12 @@ require(["js/qlik"], function (qlik) {
         break;
     }
   });
-
   //Upon Click of Bookmark New
-    
   $("#newBm").click(function () {
     $("#formModal").toggle(true);
     $("#createBm").prop("disabled", false);
     $("#newBm").prop("disabled", true);
   });
-
   //Create Bookmark
   $("#createBm").click(function () {
     var title = $("#bmTitle").val();
@@ -198,11 +182,19 @@ require(["js/qlik"], function (qlik) {
       //save app
       app.doSave();
     });
-
     $("#bmTitle").val("");
     $("#bmDesc").val("");
+    $("#formModal").toggle(false);
+    $("#createBm").prop("disabled", true);
+    $("#newBm").prop("disabled", false);
   });
-
+  $("#bmCloseButton").click(function () {
+    $("#bmTitle").val("");
+    $("#bmDesc").val("");
+    $("#formModal").toggle(false);
+    $("#createBm").prop("disabled", true);
+    $("#newBm").prop("disabled", false);
+  });
   //Return List of Bookmarks
   app.getList("BookmarkList", function (reply) {
     var str = "";
@@ -237,7 +229,6 @@ require(["js/qlik"], function (qlik) {
       $("#bookmarkModal").modal("hide");
     });
   });
-
   // find the bootstrap tab changing event
   // invoke qlik.resize(); in it
   // This is used for resizing qlik charts when the navigation tabs and filter/selections tabs are triggered
@@ -257,7 +248,6 @@ require(["js/qlik"], function (qlik) {
       qlik.resize();
     }, 500);
   });
-
   // make sure to get only the relevant qlik objects within active tab
   $(".nav-tabs > a").on("shown.bs.tab", function (a) {
     console.log(a.currentTarget.hash);
@@ -275,7 +265,6 @@ require(["js/qlik"], function (qlik) {
       });
     });
   });
-
   // hide
   $(".nav-tabs > a").on("hide.bs.tab", function (a) {
     console.log(a.currentTarget.hash);

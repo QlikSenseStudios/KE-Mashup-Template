@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>KirkLand &amp; Ellis Mashup </title>
@@ -35,7 +34,6 @@
     <script src="js/functionality/functionality.js"></script>
 </head>
 <!-- ************************************************* Body Section ************************************************* -->
-
 <body>
     <!-- Overlay for filter panel, must be placed direct after the opening body tag. -->
     <div class="bs-canvas-overlay bs-canvas-anim position-fixed w-100 h-100" data-offset="true" data-overlay="false">
@@ -58,7 +56,6 @@
             <!---- Filter/Bookmarks/Selections icons-->
             <div class="right_menu">
                 <ul>
-
                     <li data-placement="bottom" title="Bookmarks" data-toggle="modal" data-target="#bookmarkModal"
                         aria-expanded="false" aria-controls="bs-canvas-right">
                         <i class="fas fa-bookmark"></i>
@@ -81,11 +78,9 @@
                 <!--Side Bar Navigation-->
                 <div class="sidebar">
                     <div class="sidebar__inner">
-
                         <div class="profile">
                             <div class="profile_info">
                                 <p>Menu</p>
-
                             </div>
                         </div>
                         <!-- Navigation Tabs -->
@@ -379,7 +374,6 @@
                                                             class="qvplaceholder">
                                                             <div class="loader-02"></div> TBA
                                                         </div>
-
                                                     </div>
                                                 </div>
                                             </div>
@@ -397,13 +391,11 @@
                                                             class="qvplaceholder">
                                                             <div class="loader-02"></div> TBA
                                                         </div>
-
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div> <!-- ./End Second Tab Content : Analytics -->
-
                                     <!-- Third Tab Content : Table -->
                                     <div class="tab-pane fade" id="nav-table" role="tabpanel"
                                         aria-labelledby="nav-table-tab">
@@ -432,13 +424,9 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
                                             </div>
-
                                         </div>
                                     </div> <!-- ./End Third Tab Content : Table -->
-
-
                                 </div> <!-- ./End Tab Content -->
                             </section>
                         </div>
@@ -474,7 +462,6 @@
                         position: absolute;
                         top: 1.25rem;
                         ">Filter Panel</div>
-
             </div>
             <!-- ./End Filter Panel Header -->
             <!-- Tabs [Filters/Selections] -->
@@ -566,7 +553,7 @@
                                 Advanced Filters/ Extension Placeholder TBD
                             </div>
                             <div class="card-body">
-                                <div class="loader"></div>
+                                <div class="loader-02"></div>
                             </div>
                         </div>
                     </div>
@@ -607,7 +594,6 @@
             </div> <!-- ./End Selections Tab Content-->
         </div><!-- ./End Tab Content [Filters/Selections] -->
     </div><!-- ./ End Off-canvas sidebar markup, right -->
-
     <!-- ************************************************** ./End Filter Section Panel ********************************************** -->
     <!-- ************************************************** Bookmark Modal ********************************************** -->
     <div class="bootstrap-iso">
@@ -617,18 +603,19 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="bookmarkModalLabel">Bookmarks</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button id="bmCloseButton" type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">×</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form id="formModal">
+                        <form id="formModal" style="display:none">
                             <label for="bmTitle" class="control-label">Title:</label>
                             <input type="text" class="form-control" id="bmTitle">
                             <label for="bmDesc" class="control-label">Description:</label>
                             <input type="text" class="form-control" id="bmDesc">
                         </form>
                         <ul class="list-group">
+                            <div class="loader-02"></div>
                         </ul>
                     </div>
                     <div class="modal-footer">
@@ -643,14 +630,7 @@
             </div>
         </div>
     </div>
-
     <!-- ************************************************** ./End Bookmark Modal ********************************************** -->
-
-
-
-
     <!-- ************************************************* ./End Body Section ************************************************* -->
-
 </body>
-
 </html>

@@ -38,7 +38,6 @@ body {
   line-height: 1.5;
 }
 /*Loading*/
-
 .loader-02 {
   display: inline-block;
   width: 1rem;
@@ -53,7 +52,6 @@ body {
   -webkit-animation: 1s loader-02 linear infinite;
   animation: 1s loader-02 linear infinite;
 }
-
 @-webkit-keyframes loader-02 {
   0% {
     transform: rotate(0deg);
@@ -62,7 +60,6 @@ body {
     transform: rotate(360deg);
   }
 }
-
 @keyframes loader-02 {
   0% {
     transform: rotate(0deg);
@@ -71,10 +68,8 @@ body {
     transform: rotate(360deg);
   }
 }
-
 .loaderChart-02 {
   position: fixed;
-
   width: 3rem;
   height: 3rem;
   color: inherit;
@@ -87,7 +82,6 @@ body {
   -webkit-animation: 1s loaderChart-02 linear infinite;
   animation: 1s loaderChart-02 linear infinite;
 }
-
 @-webkit-keyframes loaderChart-02 {
   0% {
     transform: rotate(0deg);
@@ -96,7 +90,6 @@ body {
     transform: rotate(360deg);
   }
 }
-
 @keyframes loaderChart-02 {
   0% {
     transform: rotate(0deg);
@@ -105,7 +98,6 @@ body {
     transform: rotate(360deg);
   }
 }
-
 /*Loading Ends*/
 .intro h1 {
   font-size: 18pt;
@@ -388,43 +380,34 @@ top_navbar .menu .right_menu ul li .fas:active {
 }
 /* End CSS for Filter Pane utilizing bootstrap ***/
 /**for Bookmarks and notifications ***/
-
 /* Bookmark */
-
 .list-group {
   padding-top: 20px;
 }
-
 .list-group-item {
   display: flex;
   align-items: center;
 }
-
 .list-group-item .bm-title-text {
   cursor: pointer;
   color: #7090f0;
   font-weight: bold;
 }
-
 .list-group-item .bm-title-desc {
   cursor: pointer;
   padding-left: 10px;
   color: #7090f0;
 }
-
 .list-group .list-group-item i {
   cursor: pointer;
   margin-left: auto;
   padding: 0 10px;
 }
-
 .list-group-item .bm-title-desc {
   cursor: pointer;
   padding-left: 10px;
 }
-
 /* Current Selections */
-
 #selections {
   padding-right: 20px;
 }
@@ -443,7 +426,6 @@ top_navbar .menu .right_menu ul li .fas:active {
   background: #dc423f;
   color: white;
 }
-
 #currSelections {
   display: flex;
   flex-direction: column;
