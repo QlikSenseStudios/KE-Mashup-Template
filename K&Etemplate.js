@@ -32,83 +32,88 @@ require(["js/qlik"], function (qlik) {
   //open apps -- inserted here --
 
   //Logic for Reload Time
-  app.getAppLayout().then((e) => {
-    console.log("reload time received");
-    var reloadTime = e.layout.qLastReloadTime;
-    $('[class="reloadTime"]').text(reloadTime);
-  });
-
+  /* uncomment this Line 37-45
+  app.getAppLayout().then((e)=>
+  {
+  console.log('reload time received')
+  var reloadTime = e.layout.qLastReloadTime;
+	 $('[class="reloadTime"]').text(reloadTime);
+  }
+  )
+  */
   //get objects -- inserted here --
 
+  
   //callbacks -- inserted here --
 
-  /*
-	function KPIhc(reply, app){
-	$("#QVKPI1")[0].innerText =
+  /* uncomment this 
+  function KPIhc(reply, app) {
+    $("#QVKPI1")[0].innerText =
       reply.qHyperCube.qDataPages[0].qMatrix[0][0].qText;
     $("#QVKPI2")[0].innerText =
       reply.qHyperCube.qDataPages[0].qMatrix[0][1].qText;
-	}
+  }
 */
-
-  /*
   //create cubes and lists -- inserted here --
-	app.createCube({
-	"qInitialDataFetch": [
-		{
-			"qHeight": 20,
-			"qWidth": 2
-		}
-	],
-	"qDimensions": [],
-	"qMeasures": [
-		{
-			"qDef": {
-				"qDef": "pick(ceil(log10(sum(LineSalesAmount))/3),\r\n\n          num(sum(LineSalesAmount),'#,##0.0'),\n\n          num(sum(LineSalesAmount)/1000,'#,##0.0 K'),\n\n          num(sum(LineSalesAmount)/1000000,'#,##0.0 M')\n\n     )   & ''"
-			},
-			"qLabel": "pick(ceil(log10(sum(LineSalesAmount))/3),\r\n\n          num(sum(LineSalesAmount),'#,##0.0'),\n\n          num(sum(LineSalesAmount)/1000,'#,##0.0 K'),\n\n          num(sum(LineSalesAmount)/1000000,'#,##0.0 M')\n\n     )   & ''",
-			"qLibraryId": null,
-			"qSortBy": {
-				"qSortByState": 0,
-				"qSortByFrequency": 0,
-				"qSortByNumeric": 0,
-				"qSortByAscii": 1,
-				"qSortByLoadOrder": 0,
-				"qSortByExpression": 0,
-				"qExpression": {
-					"qv": " "
-				}
-			}
-		},
-		{
-			"qDef": {
-				"qDef": "Count(Country)"
-			},
-			"qLabel": "Count(Country)",
-			"qLibraryId": null,
-			"qSortBy": {
-				"qSortByState": 0,
-				"qSortByFrequency": 0,
-				"qSortByNumeric": 0,
-				"qSortByAscii": 1,
-				"qSortByLoadOrder": 0,
-				"qSortByExpression": 0,
-				"qExpression": {
-					"qv": " "
-				}
-			}
-		}
-	],
-	"qSuppressZero": false,
-	"qSuppressMissing": false,
-	"qMode": "S",
-	"qInterColumnSortOrder": [],
-	"qStateName": "$"
-	},KPIhc);
-*/
-
+    /* uncomment this 
+  app.createCube(
+    {
+      qInitialDataFetch: [
+        {
+          qHeight: 20,
+          qWidth: 2,
+        },
+      ],
+      qDimensions: [],
+      qMeasures: [
+        {
+          qDef: {
+            qDef: "pick(ceil(log10(sum(LineSalesAmount))/3),\r\n\n          num(sum(LineSalesAmount),'#,##0.0'),\n\n          num(sum(LineSalesAmount)/1000,'#,##0.0 K'),\n\n          num(sum(LineSalesAmount)/1000000,'#,##0.0 M')\n\n     )   & ''",
+          },
+          qLabel:
+            "pick(ceil(log10(sum(LineSalesAmount))/3),\r\n\n          num(sum(LineSalesAmount),'#,##0.0'),\n\n          num(sum(LineSalesAmount)/1000,'#,##0.0 K'),\n\n          num(sum(LineSalesAmount)/1000000,'#,##0.0 M')\n\n     )   & ''",
+          qLibraryId: null,
+          qSortBy: {
+            qSortByState: 0,
+            qSortByFrequency: 0,
+            qSortByNumeric: 0,
+            qSortByAscii: 1,
+            qSortByLoadOrder: 0,
+            qSortByExpression: 0,
+            qExpression: {
+              qv: " ",
+            },
+          },
+        },
+        {
+          qDef: {
+            qDef: "Count(Country)",
+          },
+          qLabel: "Count(Country)",
+          qLibraryId: null,
+          qSortBy: {
+            qSortByState: 0,
+            qSortByFrequency: 0,
+            qSortByNumeric: 0,
+            qSortByAscii: 1,
+            qSortByLoadOrder: 0,
+            qSortByExpression: 0,
+            qExpression: {
+              qv: " ",
+            },
+          },
+        },
+      ],
+      qSuppressZero: false,
+      qSuppressMissing: false,
+      qMode: "S",
+      qInterColumnSortOrder: [],
+      qStateName: "$",
+    },
+    KPIhc
+  );  */
   //Grab Current Selections
-  /*
+    /* uncomment this 
   app.getList("SelectionObject", function (reply) {
     $selections = $("#currSelections");
     $selections.html("");
@@ -159,7 +164,7 @@ require(["js/qlik"], function (qlik) {
     });
   });*/
   //selections Navigation
-  /*
+    /* uncomment this 
   $("[data-control]").click(function () {
     var $element = $(this);
     switch (
@@ -175,22 +180,22 @@ require(["js/qlik"], function (qlik) {
         app.forward();
         break;
     }
-  });*/
-
+  });
+*/
   //Upon Click of Bookmark New
-  /*
-  $("#newBm").click(function() {
+    /* uncomment this 
+  $("#newBm").click(function () {
     $("#formModal").toggle(true);
     $("#createBm").prop("disabled", false);
     $("#newBm").prop("disabled", true);
   });
 
   //Create Bookmark
-  $("#createBm").click(function() {
+  $("#createBm").click(function () {
     var title = $("#bmTitle").val();
     var desc = $("#bmDesc").val();
     //apply bookmark
-    app.bookmark.create(title, desc).then(function(){
+    app.bookmark.create(title, desc).then(function () {
       //save app
       app.doSave();
     });
@@ -200,9 +205,9 @@ require(["js/qlik"], function (qlik) {
   });
 
   //Return List of Bookmarks
-  app.getList("BookmarkList", function(reply) {
+  app.getList("BookmarkList", function (reply) {
     var str = "";
-    reply.qBookmarkList.qItems.forEach(function(value) {
+    reply.qBookmarkList.qItems.forEach(function (value) {
       str +=
         '<li class="list-group-item"><a class="list-container" data-id="' +
         value.qInfo.qId +
@@ -219,29 +224,28 @@ require(["js/qlik"], function (qlik) {
         '"></i></li>';
     });
     $(".list-group").html(str);
-    $(".list-container").click(function() {
+    $(".list-container").click(function () {
       var id = $(this).data("id");
       app.bookmark.apply(id);
       $("#bookmarkModal").modal("hide");
     });
-    $(".fa-trash").click(function() {
+    $(".fa-trash").click(function () {
       var id = $(this).data("id");
-      app.bookmark.remove(id).then(function(){
+      app.bookmark.remove(id).then(function () {
         //save app
         app.doSave();
       });
       $("#bookmarkModal").modal("hide");
     });
   });
-  */
-
+*/
   // find the bootstrap tab changing event
   // invoke qlik.resize(); in it
   // This is used for resizing qlik charts when the navigation tabs and filter/selections tabs are triggered
   $('a[data-toggle="tab"],[data-toggle="pill"]').on(
     "shown.bs.tab",
     function () {
-      //console.log('resize')
+      // console.log('resize')
       qlik.resize();
     }
   );

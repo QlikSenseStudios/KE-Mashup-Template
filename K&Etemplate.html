@@ -93,14 +93,21 @@
                             <li>
                                 <div class="nav flex-column nav-tabs nav-fill" id="nav-tab" role="tablist"
                                     aria-orientation="vertical">
-                                    <a class="nav-item nav-link active" id="nav-dashboard-tab" data-toggle="tab"
-                                        href="#nav-dashboard" role="tab" aria-controls="nav-home"
-                                        aria-selected="true"><span class="icon"><i class="fas fa-home"
-                                                aria-hidden="true"></i></span><span class="title">DASHBOARD</span></a>
-                                    <a class="nav-item nav-link" id="nav-analytics-tab" data-toggle="tab"
-                                        href="#nav-analytics" role="tab" aria-controls="nav-analytics"
-                                        aria-selected="false"><span class="icon"><i class="fas fa-chart-pie"
-                                                aria-hidden="true"></i></span><span class="title">ANALYTICS</span></a>
+                                    <a class="nav-item nav-link active" id="nav-dashboard-tab" data-placement="bottom"
+                                        title="Dashboard" data-toggle="tab" href="#nav-dashboard" role="tab"
+                                        aria-controls="nav-home" aria-selected="true"><span class="icon"><i
+                                                class="fas fa-home" aria-hidden="true"></i></span><span
+                                            class="title">DASHBOARD</span></a>
+                                    <a class="nav-item nav-link" id="nav-analytics-tab" data-placement="bottom"
+                                        title="Analytics" data-toggle="tab" href="#nav-analytics" role="tab"
+                                        aria-controls="nav-analytics" aria-selected="false"><span class="icon"><i
+                                                class="fas fa-chart-pie" aria-hidden="true"></i></span><span
+                                            class="title">ANALYTICS</span></a>
+                                    <a class="nav-item nav-link" id="nav-table-tab" data-placement="bottom"
+                                        title="Table" data-toggle="tab" href="#nav-table" role="tab"
+                                        aria-controls="nav-table" aria-selected="false"><span class="icon"><i
+                                                class="fas fa-table" aria-hidden="true"></i></span><span
+                                            class="title">TABLE</span></a>
                                 </div>
                             </li>
                         </ul>
@@ -134,7 +141,9 @@
                                                 <h1 class="h4 mb-0 text-gray-800 text-uppercase">Dashboard</h1>
                                                 <div class="d-none d-sm-inline-block btn btn-sm shadow-sm"><i
                                                         class="fas fa-clock fa-sm"></i> Data Last Reload : <span
-                                                        class="reloadTime"></span></div>
+                                                        class="reloadTime">
+                                                        <div class="loader-02"></div>
+                                                    </span></div>
                                             </div>
                                             <!-- ./End Page Heading -->
                                             <section id="minimal-kpi">
@@ -198,7 +207,9 @@
                                                                                 aria-hidden="true"></i>
                                                                         </div>
                                                                         <div class="media-body text-right">
-                                                                            <h4>TBD</h4>
+                                                                            <h4>
+                                                                                <div class="loader-02"></div> TBA
+                                                                            </h4>
                                                                             <span>Median Fees</span>
                                                                         </div>
                                                                     </div>
@@ -216,7 +227,9 @@
                                                                                 aria-hidden="true"></i>
                                                                         </div>
                                                                         <div class="media-body text-right">
-                                                                            <h4>TBD</h4>
+                                                                            <h4>
+                                                                                <div class="loader-02"></div> TBA
+                                                                            </h4>
                                                                             <span>Total Visits</span>
                                                                         </div>
                                                                     </div>
@@ -244,7 +257,7 @@
                                                         <!-- Viz Chart 01 -->
                                                         <div id="QVChart01" style="height:100%;width:100%"
                                                             class="qvplaceholder">
-                                                            <div class="loader-02"></div>
+                                                            <div class="loader-02"></div> TBA
                                                         </div>
                                                     </div>
                                                 </div>
@@ -262,7 +275,7 @@
                                                         <!-- Viz Chart 02 -->
                                                         <div id="QVChart02" style="height:100%;width:100%"
                                                             class="qvplaceholder">
-                                                            <div class="loader-02"></div>
+                                                            <div class="loader-02"></div> TBA
                                                         </div>
                                                     </div>
                                                 </div>
@@ -279,20 +292,7 @@
                                                         <!-- Viz Chart 03 -->
                                                         <div id="QVChart03" style="height:100%;width:100%"
                                                             class="qvplaceholder">
-                                                            <div class="lds-spinner">
-                                                                <div></div>
-                                                                <div></div>
-                                                                <div></div>
-                                                                <div></div>
-                                                                <div></div>
-                                                                <div></div>
-                                                                <div></div>
-                                                                <div></div>
-                                                                <div></div>
-                                                                <div></div>
-                                                                <div></div>
-                                                                <div></div>
-                                                            </div>
+                                                            <div class="loader-02"></div>TBA
                                                         </div>
                                                     </div>
                                                 </div>
@@ -305,7 +305,7 @@
                                                         <!-- Viz Chart 04 -->
                                                         <div id="QVChart04" style="height:100%;width:100%"
                                                             class="qvplaceholder">
-                                                            <div class="loader-02"></div>
+                                                            <div class="loader-02"></div> TBA
                                                         </div>
                                                     </div>
                                                 </div>
@@ -320,7 +320,7 @@
                                                         <!-- Viz Chart 05 -->
                                                         <div id="QVChart05" style="height:100%;width:100%"
                                                             class="qvplaceholder">
-                                                            <div class="loader-02"></div>
+                                                            <div class="loader-02"></div> TBA
                                                         </div>
                                                     </div>
                                                 </div>
@@ -333,7 +333,7 @@
                                                         <!-- Viz Chart 06 -->
                                                         <div id="QVChart06" style="height:100%;width:100%"
                                                             class="qvplaceholder">
-                                                            <div class="loader-02"></div>
+                                                            <div class="loader-02"></div> TBA
                                                         </div>
                                                     </div>
                                                 </div>
@@ -348,7 +348,9 @@
                                             <h1 class="h4 mb-0 text-gray-800 text-uppercase">Analytics</h1>
                                             <div class="d-none d-sm-inline-block btn btn-sm shadow-sm"><i
                                                     class="fas fa-clock fa-sm"></i> Data Last Reload : <span
-                                                    class="reloadTime"></span></div>
+                                                    class="reloadTime">
+                                                    <div class="loader-02"></div>
+                                                </span></div>
                                         </div>
                                         <!-- ./End Page Heading -->
                                         <div class="row">
@@ -362,7 +364,7 @@
                                                         <!-- Viz Chart 07 -->
                                                         <div id="QVChart07" style="height:100%;width:100%"
                                                             class="qvplaceholder">
-                                                            <div class="loader-02"></div>
+                                                            <div class="loader-02"></div> TBA
                                                         </div>
                                                     </div>
                                                 </div>
@@ -374,7 +376,9 @@
                                                     <div style="height:500px">
                                                         <!-- Viz Chart 08 -->
                                                         <div id="QVChart08" style="height:100%;width:100%"
-                                                            class="qvplaceholder">TBD</div>
+                                                            class="qvplaceholder">
+                                                            <div class="loader-02"></div> TBA
+                                                        </div>
 
                                                     </div>
                                                 </div>
@@ -390,13 +394,51 @@
                                                     <div style="height:500px">
                                                         <!-- Viz Chart 09 -->
                                                         <div id="QVChart09" style="height:100%;width:100%"
-                                                            class="qvplaceholder"> TBD</div>
+                                                            class="qvplaceholder">
+                                                            <div class="loader-02"></div> TBA
+                                                        </div>
 
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div> <!-- ./End Second Tab Content : Analytics -->
+
+                                    <!-- Third Tab Content : Table -->
+                                    <div class="tab-pane fade" id="nav-table" role="tabpanel"
+                                        aria-labelledby="nav-table-tab">
+                                        <!-- Page Heading -->
+                                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                                            <h1 class="h4 mb-0 text-gray-800 text-uppercase">Table</h1>
+                                            <div class="d-none d-sm-inline-block btn btn-sm shadow-sm"><i
+                                                    class="fas fa-clock fa-sm"></i> Data Last Reload : <span
+                                                    class="reloadTime">
+                                                    <div class="loader-02"></div>
+                                                </span></div>
+                                        </div>
+                                        <!-- ./End Page Heading -->
+                                        <div class="row">
+                                            <div class="col-xl-8 col-lg-7">
+                                                <!--  Chart 1 -->
+                                                <div class="card shadow mb-4">
+                                                    <div class="card-header py-3">
+                                                        <h6 class="m-0 font-weight-bold">Chart Header 1</h6>
+                                                    </div>
+                                                    <div style="height:500px">
+                                                        <!-- Viz Chart 10 -->
+                                                        <div id="QVChart10" style="height:100%;width:100%"
+                                                            class="qvplaceholder">
+                                                            <div class="loader-02"></div> TBA
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div> <!-- ./End Third Tab Content : Table -->
+
+
                                 </div> <!-- ./End Tab Content -->
                             </section>
                         </div>
@@ -415,15 +457,23 @@
             data-offset="true" data-overlay="false">
             <!-- Filter Panel Header -->
             <div class="sidebar-brand d-flex align-items-center justify-content-center"
-                style="background: #192234;padding-top: 2.25rem;margin-bottom: 10px;">
-                <div class="sidebar-brand-icon rotate-n-15">
+                style="background: #192234;padding-top: 3.75rem;margin-bottom: 10px;">
+                <div class="sidebar-brand-icon rotate-n-15" style="
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+">
                     <button type="button" class="bs-canvas-close close" aria-label="Close" aria-expanded="true"><span
                             aria-hidden="true" class="text-light">×</span></button>
                 </div>
-                <div class="sidebar-brand-text mx-3" style="color: #edf0f5!important;
+                <div class="sidebar-brand-text mx-3" style="
+                        color: #edf0f5!important;
                         text-transform: uppercase;
                         letter-spacing: 1.5px;
-                        font-weight: 500;">Filter Panel</div>
+                        font-weight: 500;
+                        position: absolute;
+                        top: 1.25rem;
+                        ">Filter Panel</div>
 
             </div>
             <!-- ./End Filter Panel Header -->
@@ -450,52 +500,65 @@
                     <!-- Filters Tab Content-->
                     <div class="bs-canvas-content px-3 py-5" style="padding-top: 1rem!important;">
                         <div class="filterObject">
-                            <div id="QV01" class="qvplaceholder"></div>
+                            <div id="QV01" class="qvplaceholder">
+                                <div class="loader-02"></div> TBA
+                            </div>
                             <br>
                             <br>
                             <div id="QV02" class="qvplaceholder">
+                                <div class="loader-02"></div> TBA
                             </div>
                             <br>
                             <br>
                             <div id="QV03" class="qvplaceholder">
+                                <div class="loader-02"></div> TBA
                             </div>
                             <br>
                             <br>
                             <div id="QV04" class="qvplaceholder">
+                                <div class="loader-02"></div> TBA
                             </div>
                             <br>
                             <br>
                             <div id="QV05" class="qvplaceholder">
+                                <div class="loader-02"></div> TBA
                             </div>
                             <br>
                             <br>
                         </div>
                         <div class="filterObject">
                             <div id="QV06" class="qvplaceholder">
+                                <div class="loader-02"></div> TBA
                             </div>
                             <br>
                             <br>
                             <div id="QV07" class="qvplaceholder">
+                                <div class="loader-02"></div> TBA
                             </div>
                             <br>
                             <br>
                             <div id="QV08" class="qvplaceholder">
+                                <div class="loader-02"></div> TBA
                             </div>
                             <br>
                             <br>
                             <div id="QV10" class="qvplaceholder">
+                                <div class="loader-02"></div> TBA
                             </div>
                             <br>
                             <br>
                             <div id="QV11" class="qvplaceholder">
+                                <div class="loader-02"></div> TBA
                             </div>
                             <br>
                             <br>
                             <div id="QV12" class="qvplaceholder">
+                                <div class="loader-02"></div> TBA
                             </div>
                             <br>
                             <br>
                             <div id="QV13" class="qvplaceholder">
+                                <div class="loader-02"></div> TBA
                             </div>
                         </div>
                         <div class="card mb-5">
@@ -544,34 +607,37 @@
             </div> <!-- ./End Selections Tab Content-->
         </div><!-- ./End Tab Content [Filters/Selections] -->
     </div><!-- ./ End Off-canvas sidebar markup, right -->
-    </div>
+
     <!-- ************************************************** ./End Filter Section Panel ********************************************** -->
     <!-- ************************************************** Bookmark Modal ********************************************** -->
     <div class="bootstrap-iso">
-        <div class="modal fade" id="bookmarkModal" tabGooglePlayMashup="-1" role="dialog"
+        <div class="modal fade" id="bookmarkModal" tabgoogleplaymashup="-1" role="dialog"
             aria-labelledby="bookmarkModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="bookmarkModalLabel">Bookmarks</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+                            <span aria-hidden="true">×</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <form id="formModal">
                             <label for="bmTitle" class="control-label">Title:</label>
-                            <input type="text" class="form-control" id="bmTitle"></input>
+                            <input type="text" class="form-control" id="bmTitle">
                             <label for="bmDesc" class="control-label">Description:</label>
-                            <input type="text" class="form-control" id="bmDesc"></input>
+                            <input type="text" class="form-control" id="bmDesc">
                         </form>
                         <ul class="list-group">
                         </ul>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" id="newBm">New</button>
-                        <button type="button" class="btn btn-primary" id="createBm" disabled
-                            data-dismiss="modal">Create</button>
+                        <button type="button" class="btn" id="newBm"
+                            style="background: #7090f0;color: #ffffff;">New</button>
+                        <button type="button" class="btn" id="createBm" disabled="" data-dismiss="modal" style="
+    background: #7090f0;
+    color: #ffffff;
+">Create</button>
                     </div>
                 </div>
             </div>
@@ -584,6 +650,7 @@
 
 
     <!-- ************************************************* ./End Body Section ************************************************* -->
+
 </body>
 
 </html>

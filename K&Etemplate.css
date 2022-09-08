@@ -402,17 +402,25 @@ top_navbar .menu .right_menu ul li .fas:active {
 
 .list-group-item .bm-title-text {
   cursor: pointer;
+  color: #7090f0;
+  font-weight: bold;
 }
 
 .list-group-item .bm-title-desc {
   cursor: pointer;
   padding-left: 10px;
+  color: #7090f0;
 }
 
 .list-group .list-group-item i {
   cursor: pointer;
   margin-left: auto;
   padding: 0 10px;
+}
+
+.list-group-item .bm-title-desc {
+  cursor: pointer;
+  padding-left: 10px;
 }
 
 /* Current Selections */
@@ -471,7 +479,7 @@ top_navbar .menu .right_menu ul li .fas:active {
   font-size: 18px;
   margin-left: auto;
   font-weight: bold;
-  color: red;
+  color: #dc423f;
   padding-right: 20px;
   cursor: pointer;
 }
@@ -522,6 +530,10 @@ top_navbar .menu .right_menu ul li .fas:active {
 .filterObject {
   width: 100%;
   margin: 0 auto;
+}
+.filterObject .qvplaceholder {
+  height: 2.2rem;
+  width: 100%;
 }
 .filterObject .qvobject {
   height: 2.2rem;
