@@ -509,18 +509,6 @@ top_navbar .menu .right_menu ul li .fas:active {
   cursor: pointer;
 }
 /***Qlik Object Styles***/
-.filterObject {
-  width: 100%;
-  margin: 0 auto;
-}
-.filterObject .qvplaceholder {
-  height: 2.2rem;
-  width: 100%;
-}
-.filterObject .qvobject {
-  height: 2.2rem;
-  width: 100%;
-}
 .qvplaceholder,
 .qvobject {
   flex: 1 1 auto;
@@ -537,6 +525,32 @@ top_navbar .menu .right_menu ul li .fas:active {
 .qvplaceholder,
 .qvobject:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+/*CSS for Filters only*/
+.filterObject {
+  width: 100%;
+  margin: 0 auto;
+}
+.filterObject .qvplaceholder {
+height:2.2rem;
+  width: 100%;
+}
+.filterObject .qvobject {
+height:2.2rem;
+  width: 100%;
+}
+/*CSS for Extension Filter Object**/
+.filterObjectExt{
+width: 100%;
+margin: 0 auto;
+}
+.filterObjectExt .qvplaceholder{
+height:500px;
+width: 100%;
+}
+.filterObjectExt .qvobject{
+height:500px;
+width: 100%;
 }
 .qv-object .qv-inner-object {
   height: 100%;
