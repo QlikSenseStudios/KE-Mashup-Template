@@ -29,13 +29,17 @@ require(["js/qlik"], function (qlik) {
     $("#popup").hide();
   });
   //open apps -- inserted here --
+  
   //Logic for Reload Time
   app.getAppLayout().then((e) => {
     console.log("reload time received");
     var reloadTime = e.layout.qLastReloadTime;
     $('[class="reloadTime"]').text(reloadTime);
   });
+  window.qlik = qlik;
+  window.app = app;
   //get objects -- inserted here --
+  
   //callbacks -- inserted here --
   function KPIhc(reply, app) {
     $("#QVKPI1")[0].innerText =

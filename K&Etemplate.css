@@ -6,164 +6,27 @@
   text-decoration: none;
   font-family: "Arial";
 }
-/* Safari */
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 body {
-  font-weight: 300;
-  font-smoothing: antialiased;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 15px;
-  background: #eee;
+  height: 100%;
+  margin: 0px;
+  display: flex;
 }
-.intro {
-  background: #fff;
-  color: #333;
-  margin-bottom: 15px;
-  line-height: 1.5;
-}
-/*Loading*/
-.loader-02 {
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  color: inherit;
-  vertical-align: middle;
-  pointer-events: none;
-  border: 0.2em solid transparent;
-  border-left-color: currentcolor;
-  border-right-color: currentcolor;
-  border-radius: 50%;
-  -webkit-animation: 1s loader-02 linear infinite;
-  animation: 1s loader-02 linear infinite;
-}
-@-webkit-keyframes loader-02 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes loader-02 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-.loaderChart-02 {
-  position: fixed;
-  width: 3rem;
-  height: 3rem;
-  color: inherit;
-  vertical-align: middle;
-  pointer-events: none;
-  border: 0.2em solid transparent;
-  border-left-color: currentcolor;
-  border-right-color: currentcolor;
-  border-radius: 50%;
-  -webkit-animation: 1s loaderChart-02 linear infinite;
-  animation: 1s loaderChart-02 linear infinite;
-}
-@-webkit-keyframes loaderChart-02 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes loaderChart-02 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-/*Loading Ends*/
-.intro h1 {
-  font-size: 18pt;
-  padding-bottom: 15px;
-}
-.intro p {
-  font-size: 14px;
-}
-a.btn {
-  text-decoration: none;
-  color: #666;
-  border: 2px solid #666;
-  padding: 10px 15px;
-  display: inline-block;
-  margin-left: 5px;
-}
-a.btn:hover {
-  background: #666;
-  color: #fff;
-  transition: 0.3s;
-  -webkit-transition: 0.3s;
-}
-.btn:before {
-  font-family: FontAwesome;
-  font-weight: normal;
-  margin-right: 10px;
-}
-.down:before {
-  content: "\f019";
-}
-main {
-  background: #fff;
-  padding: 20px;
-}
-article li {
-  color: #444;
-  font-size: 15px;
-  margin-left: 1px;
-  line-height: 1.5;
-  padding: 5px;
-}
-article h1,
-article h2,
-article h3,
-article h4,
-article p {
-  padding: 14px;
-  color: #333;
-}
-article p {
-  font-size: 15px;
-  line-height: 1.5;
-}
+/* CSS FOR MAIN STRUCTURE */
 .wrapper {
   width: 100%;
   height: 100%;
 }
+/* CSS Top Bar */
 .top_navbar {
   background: #303f5d;
   height: 60px;
+  width: 100%;
   display: flex;
   position: fixed;
-  width: 100%;
   top: 0;
   z-index: 2;
 }
+/* CSS Top Bar - Hamburger */
 .top_navbar .hamburger {
   width: 80px;
   background: #192234;
@@ -194,6 +57,35 @@ article p {
 .top_navbar .hamburger div.three {
   top: 20px;
 }
+.top_navbar .ham_close {
+  position: absolute;
+  background: white;
+  top: 50%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  width: 33px;
+  height: 33px;
+}
+.top_navbar .ham_close:hover {
+  opacity: 1;
+}
+.top_navbar .ham_close:before,
+.top_navbar .ham_close:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+.top_navbar .ham_close:before {
+  transform: rotate(45deg);
+}
+.top_navbar .ham_close:after {
+  transform: rotate(-45deg);
+}
+/* CSS Top Bar - Menu for logo , Bookmarks and Filters */
 .top_navbar .menu {
   width: calc(100% - 80px);
   height: 100%;
@@ -233,15 +125,17 @@ top_navbar .menu .right_menu ul li .fas:active {
   background: #303f5d;
   color: #ffffff;
 }
+/* CSS Sidebar Navigation */
 .main_container .sidebar {
   position: fixed;
   top: 60px;
   left: 0;
-  width: 225px;
   height: 100%;
+  width: 225px;
   background: #192234;
   transition: all 0.3s ease;
 }
+/* CSS Sidebar Inner */
 .main_container .sidebar .sidebar__inner {
   position: relative;
 }
@@ -271,7 +165,6 @@ top_navbar .menu .right_menu ul li .fas:active {
   transition: all 0.3s ease;
 }
 .main_container .sidebar ul li a {
-  color: #7090f0;
   font-size: 16px;
   font-weight: bold;
   padding: 20px 30px;
@@ -282,6 +175,7 @@ top_navbar .menu .right_menu ul li .fas:active {
   letter-spacing: 1.3px;
   transition: all 0.3s ease;
   text-transform: uppercase;
+  color: #7090f0;
 }
 .main_container .sidebar ul li a .icon {
   margin-right: 15px;
@@ -307,7 +201,7 @@ top_navbar .menu .right_menu ul li .fas:active {
   width: calc(100% - 80px);
   margin-left: 80px;
 }
-/* CSS for Filter Pane utilizing bootstrap ***/
+/* CSS FILTER PANE UTILIZING BOOTSTRAP : we are making few changes ***/
 .bs-canvas-overlay {
   opacity: 0;
   z-index: -1;
@@ -337,10 +231,6 @@ top_navbar .menu .right_menu ul li .fas:active {
 }
 .bootstrap-iso .text-light {
   color: #ffffff !important;
-}
-.search-bar {
-  margin: 15px auto 0 auto;
-  width: 100%;
 }
 /*** CSS for scrollbar in filter pane ***/
 /* width */
@@ -378,9 +268,19 @@ top_navbar .menu .right_menu ul li .fas:active {
 .bootstrap-iso .btn-primary {
   letter-spacing: 1.3px;
 }
-/* End CSS for Filter Pane utilizing bootstrap ***/
-/**for Bookmarks and notifications ***/
-/* Bookmark */
+.bootstrap-iso .nav-pills .nav-link {
+  border-radius: 0rem !important;
+}
+.bootstrap-iso .nav-pills .nav-link.active,
+.bootstrap-iso .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #303f5d !important;
+}
+.bootstrap-iso .card-body {
+  box-shadow: 5px 5px 5px 0px rgb(0 0 0 / 20%) !important;
+}
+/**CSS BOOKMARKS AND SELECTIONS NOTIFICATION ***/
+/* CSS Bookmark */
 .list-group {
   padding-top: 20px;
 }
@@ -407,7 +307,7 @@ top_navbar .menu .right_menu ul li .fas:active {
   cursor: pointer;
   padding-left: 10px;
 }
-/* Current Selections */
+/* CSS Current Selections */
 #selections {
   padding-right: 20px;
 }
@@ -465,34 +365,6 @@ top_navbar .menu .right_menu ul li .fas:active {
   padding-right: 20px;
   cursor: pointer;
 }
-/**end of notifications***/
-.bootstrap-iso .nav-pills .nav-link {
-  border-radius: 0rem !important;
-}
-.bootstrap-iso .nav-pills .nav-link.active,
-.bootstrap-iso .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #303f5d !important;
-}
-.bootstrap-iso .card-body {
-  box-shadow: 5px 5px 5px 0px rgb(0 0 0 / 20%) !important;
-}
-.grey-bg {
-  background-color: #f5f7fa;
-}
-.cart-button {
-  position: relative;
-  padding: 10px;
-  border: 0;
-  border-radius: 10px;
-  background-color: #2b3044;
-  outline: none;
-  cursor: pointer;
-  margin: 0 10px;
-  color: #fff;
-  overflow: hidden;
-  user-select: none;
-}
 .pqt-plus,
 .pqt-minus {
   border: none;
@@ -508,7 +380,21 @@ top_navbar .menu .right_menu ul li .fas:active {
 .pqt-minus:hover {
   cursor: pointer;
 }
-/***Qlik Object Styles***/
+.clearAll-button {
+  position: relative;
+  padding: 10px;
+  border: 0;
+  border-radius: 10px;
+  background-color: #2b3044;
+  outline: none;
+  cursor: pointer;
+  margin: 0 10px;
+  color: #fff;
+  overflow: hidden;
+  user-select: none;
+}
+/* CSS FOR QLIK STYLES */
+/* CSS for Qlik Placeholders Objects */
 .qvplaceholder,
 .qvobject {
   flex: 1 1 auto;
@@ -526,31 +412,31 @@ top_navbar .menu .right_menu ul li .fas:active {
 .qvobject:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 }
-/*CSS for Filters only*/
+/*CSS for Filters Placeholders objects only*/
 .filterObject {
   width: 100%;
   margin: 0 auto;
 }
 .filterObject .qvplaceholder {
-height:2.2rem;
+  height: 2.2rem;
   width: 100%;
 }
 .filterObject .qvobject {
-height:2.2rem;
+  height: 2.2rem;
   width: 100%;
 }
-/*CSS for Extension Filter Object**/
-.filterObjectExt{
-width: 100%;
-margin: 0 auto;
+/*CSS for Extension Filter Placeholder object*/
+.filterObjectExt {
+  width: 100%;
+  margin: 0 auto;
 }
-.filterObjectExt .qvplaceholder{
-height:500px;
-width: 100%;
+.filterObjectExt .qvplaceholder {
+  height: 500px;
+  width: 100%;
 }
-.filterObjectExt .qvobject{
-height:500px;
-width: 100%;
+.filterObjectExt .qvobject {
+  height: 500px;
+  width: 100%;
 }
 .qv-object .qv-inner-object {
   height: 100%;
@@ -613,12 +499,46 @@ width: 100%;
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
-  /*#bs-canvas-right {width:100% !important}*/
+  /*#bs-canvas-right {
+		width:100% !important
+}
+	*/
   #bookmark {
     margin-left: auto;
   }
   .wrapper:not(.active) .sidebar {
     width: 100vw !important;
     z-index: 100;
+  }
+}
+/* CSS Loaders*/
+.Loader {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  color: inherit;
+  vertical-align: middle;
+  pointer-events: none;
+  border: 0.2em solid transparent;
+  border-left-color: currentcolor;
+  border-right-color: currentcolor;
+  border-radius: 50%;
+  -webkit-animation: 1s Loader linear infinite;
+  animation: 1s Loader linear infinite;
+}
+@-webkit-keyframes Loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes Loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
