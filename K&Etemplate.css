@@ -6,12 +6,13 @@
   --text-light: #2C3E50;
 
   /* Theme 2 */
-  --topbar-dark: #303f5d;
+  --topbar-dark: #edf0f5;
   --sidebar-dark: #192234;
   --icon-dark: #7090f0;
   --maincontainer-dark: #303f5d;
   --text-dark1: #edf0f5;
   --text-dark2: #ffffff;
+  --text-dark3: #2354E8;
   --scrollbarthumb-dark:#888;
   --scrollbarthumbhover-dark:#555;
   --scrollbartrck-dark:#f1f1f1;
@@ -80,6 +81,7 @@ background: var(--text-dark2);
 top: 10px;
 width: 40px;
 }
+
 .top_navbar .hamburger div.three {
 top: 20px;
 }
@@ -121,7 +123,7 @@ align-items: center;
 padding: 0 20px;
 }
 .top_navbar .menu .logo {
-color: var(--text-dark1);
+color: var(--text-dark3);
 text-transform: uppercase;
 letter-spacing: 1.5px;
 font-size: 1rem;
@@ -148,10 +150,12 @@ color: var(--icon-dark);
 top_navbar .menu .right_menu ul li .fas:active {
 font-size: 22px;
 cursor: pointer;
-background: var(--topbar-dark);
-color: var(--text-dark2);
+
 }
 /* CSS Sidebar Navigation */
+.main_container{
+  background-color:var(--maincontainer-dark);
+}
 .main_container .sidebar {
 position: fixed;
 top: 60px;
@@ -192,7 +196,6 @@ transition: all 0.3s ease;
 }
 .main_container .sidebar ul li a {
 font-size: 16px;
-font-weight: bold;
 padding: 20px 30px;
 white-space: nowrap;
 display: flex;
@@ -201,7 +204,7 @@ margin-bottom: 1px;
 letter-spacing: 1.3px;
 transition: all 0.3s ease;
 text-transform: uppercase;
-color: var(--icon-dark);
+color: var(--text-dark2);
 }
 .main_container .sidebar ul li a .icon {
 margin-right: 15px;
@@ -212,8 +215,10 @@ display: inline-block;
 }
 .main_container .sidebar ul li a:hover,
 .main_container .sidebar ul li a.active {
-background: var(--topbar-dark);
-color: var(--text-dark2);
+color: var(--text-dark1);
+text-decoration-line: underline;
+text-decoration-color: var(--text-dark3);
+text-decoration-thickness: 0.4rem;
 }
 /* after adding active class */
 .wrapper.active .sidebar {
@@ -299,8 +304,8 @@ border-radius: 0rem !important;
 }
 .bootstrap-iso .nav-pills .nav-link.active,
 .bootstrap-iso .nav-pills .show > .nav-link {
-color: #fff;
-background-color: var(--topbar-dark) !important;
+color: var(--text-dark1);
+background-color: var(--text-dark3) !important;
 }
 .bootstrap-iso .card-body {
 box-shadow: 5px 5px 5px 0px rgb(0 0 0 / 20%) !important;
@@ -332,6 +337,14 @@ padding: 0 10px;
 .list-group-item .bm-title-desc {
 cursor: pointer;
 padding-left: 10px;
+}
+#newBm{
+background:var(--text-dark3);
+color:var(--text-dark1);
+}
+#createBm{
+color:var(--text-dark3);
+background:var(--text-dark1);
 }
 /* CSS Current Selections */
 #selections {
@@ -401,6 +414,7 @@ border-radius: 10px;
 height: 50px;
 user-select: none;
 line-height: 50px;
+color: var(--icon-dark)!important;
 }
 .pqt-plus:hover,
 .pqt-minus:hover {
@@ -411,7 +425,7 @@ position: relative;
 padding: 10px;
 border: 0;
 border-radius: 10px;
-background-color: var(--sidebar-dark);
+background-color: var(--icon-dark);
 outline: none;
 cursor: pointer;
 margin: 0 10px;
@@ -433,6 +447,7 @@ transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
   0.3s box-shadow,
   0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
 cursor: pointer;
+font-family: "Arial";
 }
 .qvplaceholder,
 .qvobject:hover {
@@ -446,6 +461,7 @@ margin: 0 auto;
 .filterObject .qvplaceholder {
 height: 2.2rem;
 width: 100%;
+color: var(--text-dark1);
 }
 .filterObject .qvobject {
 height: 2.2rem;
@@ -465,7 +481,11 @@ height: 500px;
 width: 100%;
 }
 .qv-object .qv-inner-object {
-height: 100%;
+height: 100%!important;
+}
+.qv-object-table{
+display: flex !important;
+height: 100%!important;
 }
 .qv-collapsed-listbox .title-wrapper {
 background-color: var(--text-dark1);
@@ -494,7 +514,12 @@ z-index: 10000 !important;
 }
 .qlik-daterangepicker.dropdown-menu {
 position: fixed !important;
-z-index: 1000 !important;
+z-index: 10000!important;
+}
+
+.qlik-daterangepicker dropdown-menu opensleft show-calendar{
+position: fixed !important;
+z-index: 10000!important;
 }
 .qv-object.qv-object-qlik-variable-input {
 display: flex !important;
@@ -514,6 +539,16 @@ background-color: #655dc6 !important;
 border: 1px solid #0000;
 box-shadow: inset 0 -1px 0 0 #00000026;
 color: #fff;
+}
+
+.qv-object .qv-object-content {
+    background-color: var(--maincontainer-dark);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+.qv-listbox li .qv-listbox-text.qv-listbox-text-value{
+color:var(--text-dark1);
 }
 
 /* Media Queries */
@@ -570,3 +605,15 @@ animation: 1s Loader linear infinite;
   transform: rotate(360deg);
 }
 }
+
+/*
+#wDkVFV_content{
+background-color: #000000;
+}*/
+
+
+
+
+
+
+
