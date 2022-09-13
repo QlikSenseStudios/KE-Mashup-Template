@@ -25,22 +25,50 @@ require(["js/qlik"], function (qlik) {
     $("#popupText").append(error.message + "<br>");
     $("#popup").fadeIn(1000);
   });
+
   $("#closePopup").click(function () {
     $("#popup").hide();
   });
+
   //open apps -- inserted here --
 
   //Logic for Reload Time
   app.getAppLayout().then((e) => {
     console.log("reload time received");
     var reloadTime = e.layout.qLastReloadTime;
-    $('[class="reloadTime"]').text(reloadTime);
+    console.log(reloadTime);
+    var newDate = new Date(reloadTime);
+    var reloadTimeNew =
+      newDate.getMonth() +
+      1 +
+      "/" +
+      newDate.getDate() +
+      "/" +
+      newDate.getFullYear() +
+      " " +
+      newDate.toLocaleString("en-US", {
+        hour: "numeric",
+        minute: "numeric",
+        hour12: true,
+      });
+    $('[class="reloadTime"]').text(reloadTimeNew);
   });
   window.qlik = qlik;
   window.app = app;
+
+  /*
+    $('#SheetNav').click( function () {
+    var SheetID = '7316b7b9-7450-433c-92bb-8939de273ce2'
+  
+							qlik.navigation.gotoSheet(SheetID);
+							console.log(qlik.navigation.gotoSheet(SheetID))
+							});
+*/
+  /// var sheet1 = qlik.navigation.gotoSheet(sheetID);
+
   //get objects -- inserted here --
-  	
-	/* Export Button logic for 2 tables. Pls change object IDs accordingly*/
+
+  /* Export Button logic for 2 tables. Pls change object IDs accordingly*/
   /*
 	app.getObject('QVChart10','WrTk').then(function(reply){
 	var qTable = qlik.table(reply);
@@ -49,7 +77,6 @@ require(["js/qlik"], function (qlik) {
 							});
 		
 });	
-
 app.getObject('QVChart11','jkpGX').then(function(reply){
 	var qTable = qlik.table(reply);
 	$('#ExportButton2').click( function ( ) {
@@ -58,15 +85,16 @@ app.getObject('QVChart11','jkpGX').then(function(reply){
 		
 });	
 //End logic for Table Export
-*/ 
+*/
+
   //callbacks -- inserted here --
+
   function KPIhc(reply, app) {
-  //console.log(reply);
     $("#QVKPI1")[0].innerText =
       reply.qHyperCube.qDataPages[0].qMatrix[0][0].qText;
     $("#QVKPI2")[0].innerText =
       reply.qHyperCube.qDataPages[0].qMatrix[0][1].qText;
-	$("#QVKPI3")[0].innerText =
+    $("#QVKPI3")[0].innerText =
       reply.qHyperCube.qDataPages[0].qMatrix[0][2].qText;
   }
   //create cubes and lists -- inserted here --
@@ -84,8 +112,8 @@ app.getObject('QVChart11','jkpGX').then(function(reply){
           qDef: {
             qDef: "pick(ceil(log10(sum(LineSalesAmount))/3),\r\n\n          num(sum(LineSalesAmount),'#,##0.0'),\n\n          num(sum(LineSalesAmount)/1000,'#,##0.0 K'),\n\n          num(sum(LineSalesAmount)/1000000,'#,##0.0 M')\n\n     )   & ''",
           },
-          qLabel:"KPI1",
-		  qLibraryId: null,
+          qLabel: "KPI1",
+          qLibraryId: null,
           qSortBy: {
             qSortByState: 0,
             qSortByFrequency: 0,
@@ -116,21 +144,21 @@ app.getObject('QVChart11','jkpGX').then(function(reply){
             },
           },
         },
-		{
-			"qLabel": "Margin",
-			"qLibraryId": "AxGzSg",
-			"qSortBy": {
-				"qSortByState": 0,
-				"qSortByFrequency": 0,
-				"qSortByNumeric": 0,
-				"qSortByAscii": 1,
-				"qSortByLoadOrder": 0,
-				"qSortByExpression": 0,
-				"qExpression": {
-					"qv": " "
-				}
-			}
-		},
+        {
+          qLabel: "Margin",
+          qLibraryId: "AxGzSg",
+          qSortBy: {
+            qSortByState: 0,
+            qSortByFrequency: 0,
+            qSortByNumeric: 0,
+            qSortByAscii: 1,
+            qSortByLoadOrder: 0,
+            qSortByExpression: 0,
+            qExpression: {
+              qv: " ",
+            },
+          },
+        },
       ],
       qSuppressZero: false,
       qSuppressMissing: false,
@@ -140,7 +168,8 @@ app.getObject('QVChart11','jkpGX').then(function(reply){
     },
     KPIhc
   );
-//Grab Current Selections
+
+  //Grab Current Selections
   app.getList("SelectionObject", function (reply) {
     $selections = $("#currSelections");
     $selections.html("");
