@@ -67,8 +67,8 @@ require(["js/qlik"], function (qlik) {
   /// var sheet1 = qlik.navigation.gotoSheet(sheetID);
 
   //get objects -- inserted here --
-
-  /* Export Button logic for 2 tables. Pls change object IDs accordingly*/
+		
+	/* Export Button logic for 2 tables. Pls change object IDs accordingly*/
   /*
 	app.getObject('QVChart10','WrTk').then(function(reply){
 	var qTable = qlik.table(reply);
@@ -85,8 +85,7 @@ app.getObject('QVChart11','jkpGX').then(function(reply){
 		
 });	
 //End logic for Table Export
-*/
-
+*/ 
   //callbacks -- inserted here --
 
   function KPIhc(reply, app) {
