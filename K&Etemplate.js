@@ -39,13 +39,15 @@ require(["js/qlik"], function (qlik) {
   window.qlik = qlik;
   window.app = app;
   //get objects -- inserted here --
-  
   //callbacks -- inserted here --
   function KPIhc(reply, app) {
+  //console.log(reply);
     $("#QVKPI1")[0].innerText =
       reply.qHyperCube.qDataPages[0].qMatrix[0][0].qText;
     $("#QVKPI2")[0].innerText =
       reply.qHyperCube.qDataPages[0].qMatrix[0][1].qText;
+	$("#QVKPI3")[0].innerText =
+      reply.qHyperCube.qDataPages[0].qMatrix[0][2].qText;
   }
   //create cubes and lists -- inserted here --
   app.createCube(
@@ -53,7 +55,7 @@ require(["js/qlik"], function (qlik) {
       qInitialDataFetch: [
         {
           qHeight: 20,
-          qWidth: 2,
+          qWidth: 3,
         },
       ],
       qDimensions: [],
@@ -62,9 +64,8 @@ require(["js/qlik"], function (qlik) {
           qDef: {
             qDef: "pick(ceil(log10(sum(LineSalesAmount))/3),\r\n\n          num(sum(LineSalesAmount),'#,##0.0'),\n\n          num(sum(LineSalesAmount)/1000,'#,##0.0 K'),\n\n          num(sum(LineSalesAmount)/1000000,'#,##0.0 M')\n\n     )   & ''",
           },
-          qLabel:
-            "pick(ceil(log10(sum(LineSalesAmount))/3),\r\n\n          num(sum(LineSalesAmount),'#,##0.0'),\n\n          num(sum(LineSalesAmount)/1000,'#,##0.0 K'),\n\n          num(sum(LineSalesAmount)/1000000,'#,##0.0 M')\n\n     )   & ''",
-          qLibraryId: null,
+          qLabel:"KPI1",
+		  qLibraryId: null,
           qSortBy: {
             qSortByState: 0,
             qSortByFrequency: 0,
@@ -81,7 +82,7 @@ require(["js/qlik"], function (qlik) {
           qDef: {
             qDef: "Count(Country)",
           },
-          qLabel: "Count(Country)",
+          qLabel: "KPI2",
           qLibraryId: null,
           qSortBy: {
             qSortByState: 0,
@@ -95,6 +96,21 @@ require(["js/qlik"], function (qlik) {
             },
           },
         },
+		{
+			"qLabel": "Margin",
+			"qLibraryId": "AxGzSg",
+			"qSortBy": {
+				"qSortByState": 0,
+				"qSortByFrequency": 0,
+				"qSortByNumeric": 0,
+				"qSortByAscii": 1,
+				"qSortByLoadOrder": 0,
+				"qSortByExpression": 0,
+				"qExpression": {
+					"qv": " "
+				}
+			}
+		},
       ],
       qSuppressZero: false,
       qSuppressMissing: false,
@@ -104,7 +120,7 @@ require(["js/qlik"], function (qlik) {
     },
     KPIhc
   );
-  //Grab Current Selections
+//Grab Current Selections
   app.getList("SelectionObject", function (reply) {
     $selections = $("#currSelections");
     $selections.html("");

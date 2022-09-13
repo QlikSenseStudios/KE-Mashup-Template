@@ -4,25 +4,19 @@
   --sidebar-light: #fbfdfd;
   --main-light: #fff;
   --text-light: #2C3E50;
-
   /* Theme 2 */
-  --topbar-dark: #edf0f5;
+  --topbar-dark: #303f5d;
   --sidebar-dark: #192234;
   --icon-dark: #7090f0;
   --maincontainer-dark: #303f5d;
   --text-dark1: #edf0f5;
   --text-dark2: #ffffff;
-  --text-dark3: #2354E8;
   --scrollbarthumb-dark:#888;
   --scrollbarthumbhover-dark:#555;
   --scrollbartrck-dark:#f1f1f1;
   --cardbody-dark:#f8f9fa;
   --cardheader-dark:rgba(0,0,0,.03);
   --notification-dark:#dc423f;
-
-
-  
-
 }
 * {
 margin: 0;
@@ -41,6 +35,22 @@ display: flex;
 .wrapper {
 width: 100%;
 height: 100%;
+}
+#bs-canvas-right {
+background-color: white;
+width: 400px;
+transform: translateX(100%);
+}
+#bs-canvas-right.active-filters {
+transform: translateX(0);
+}
+.wrapper.active-filters {
+margin-right: 400px;
+}
+#bs-canvas-right .sidebar-brand {
+height: 60px;
+background: #192234;
+margin-bottom: 10px;
 }
 /* CSS Top Bar */
 .top_navbar {
@@ -75,13 +85,11 @@ left: 0;
 width: 30px;
 height: 2px;
 background: var(--text-dark2);
-
 }
 .top_navbar .hamburger div.two {
 top: 10px;
 width: 40px;
 }
-
 .top_navbar .hamburger div.three {
 top: 20px;
 }
@@ -123,7 +131,7 @@ align-items: center;
 padding: 0 20px;
 }
 .top_navbar .menu .logo {
-color: var(--text-dark3);
+color: var(--text-dark1);
 text-transform: uppercase;
 letter-spacing: 1.5px;
 font-size: 1rem;
@@ -150,12 +158,19 @@ color: var(--icon-dark);
 top_navbar .menu .right_menu ul li .fas:active {
 font-size: 22px;
 cursor: pointer;
-
+background: var(--topbar-dark);
+color: var(--text-dark2);
+}
+.margin-bottom-30 {
+margin-bottom: 30px;
+}
+.margin-bottom-45 {
+margin-bottom: 45px;
+}
+.main_container {
+  background-color: #f7f7f7;
 }
 /* CSS Sidebar Navigation */
-.main_container{
-  background-color:var(--maincontainer-dark);
-}
 .main_container .sidebar {
 position: fixed;
 top: 60px;
@@ -196,6 +211,7 @@ transition: all 0.3s ease;
 }
 .main_container .sidebar ul li a {
 font-size: 16px;
+font-weight: bold;
 padding: 20px 30px;
 white-space: nowrap;
 display: flex;
@@ -204,7 +220,7 @@ margin-bottom: 1px;
 letter-spacing: 1.3px;
 transition: all 0.3s ease;
 text-transform: uppercase;
-color: var(--text-dark2);
+color: var(--icon-dark);
 }
 .main_container .sidebar ul li a .icon {
 margin-right: 15px;
@@ -215,10 +231,11 @@ display: inline-block;
 }
 .main_container .sidebar ul li a:hover,
 .main_container .sidebar ul li a.active {
-color: var(--text-dark1);
-text-decoration-line: underline;
-text-decoration-color: var(--text-dark3);
-text-decoration-thickness: 0.4rem;
+  background: var(--topbar-dark);
+  color: var(--text-dark2);
+  text-decoration-line: underline;
+  text-decoration-color: var(--text-dark1);
+  text-decoration-thickness: 0.4rem;
 }
 /* after adding active class */
 .wrapper.active .sidebar {
@@ -304,8 +321,8 @@ border-radius: 0rem !important;
 }
 .bootstrap-iso .nav-pills .nav-link.active,
 .bootstrap-iso .nav-pills .show > .nav-link {
-color: var(--text-dark1);
-background-color: var(--text-dark3) !important;
+color: #fff;
+background-color: var(--topbar-dark) !important;
 }
 .bootstrap-iso .card-body {
 box-shadow: 5px 5px 5px 0px rgb(0 0 0 / 20%) !important;
@@ -337,14 +354,6 @@ padding: 0 10px;
 .list-group-item .bm-title-desc {
 cursor: pointer;
 padding-left: 10px;
-}
-#newBm{
-background:var(--text-dark3);
-color:var(--text-dark1);
-}
-#createBm{
-color:var(--text-dark3);
-background:var(--text-dark1);
 }
 /* CSS Current Selections */
 #selections {
@@ -414,7 +423,6 @@ border-radius: 10px;
 height: 50px;
 user-select: none;
 line-height: 50px;
-color: var(--icon-dark)!important;
 }
 .pqt-plus:hover,
 .pqt-minus:hover {
@@ -425,7 +433,7 @@ position: relative;
 padding: 10px;
 border: 0;
 border-radius: 10px;
-background-color: var(--icon-dark);
+background-color: var(--sidebar-dark);
 outline: none;
 cursor: pointer;
 margin: 0 10px;
@@ -435,23 +443,31 @@ user-select: none;
 }
 /* CSS FOR QLIK STYLES */
 /* CSS for Qlik Placeholders Objects */
+.qvplaceholder .Loader {
+  opacity: 0;
+}
 .qvplaceholder,
 .qvobject {
 flex: 1 1 auto;
 width: 100%;
-float: left;
-margin-bottom: 25px;
-letter-spacing: 0.8px;
+height: 100%;
 box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
 transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
   0.3s box-shadow,
   0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
 cursor: pointer;
-font-family: "Arial";
+background-color: white;
 }
 .qvplaceholder,
 .qvobject:hover {
 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+/* Chart Cards */
+/* Chart Headers */
+.qv-object:not(.qv-object-filterpane) .qv-object-header {
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #d5d5d5;
+  padding: 14px 16px 0px;
 }
 /*CSS for Filters Placeholders objects only*/
 .filterObject {
@@ -461,7 +477,6 @@ margin: 0 auto;
 .filterObject .qvplaceholder {
 height: 2.2rem;
 width: 100%;
-color: var(--text-dark1);
 }
 .filterObject .qvobject {
 height: 2.2rem;
@@ -481,11 +496,7 @@ height: 500px;
 width: 100%;
 }
 .qv-object .qv-inner-object {
-height: 100%!important;
-}
-.qv-object-table{
-display: flex !important;
-height: 100%!important;
+height: 100%;
 }
 .qv-collapsed-listbox .title-wrapper {
 background-color: var(--text-dark1);
@@ -514,12 +525,7 @@ z-index: 10000 !important;
 }
 .qlik-daterangepicker.dropdown-menu {
 position: fixed !important;
-z-index: 10000!important;
-}
-
-.qlik-daterangepicker dropdown-menu opensleft show-calendar{
-position: fixed !important;
-z-index: 10000!important;
+z-index: 1000 !important;
 }
 .qv-object.qv-object-qlik-variable-input {
 display: flex !important;
@@ -540,17 +546,6 @@ border: 1px solid #0000;
 box-shadow: inset 0 -1px 0 0 #00000026;
 color: #fff;
 }
-
-.qv-object .qv-object-content {
-    background-color: var(--maincontainer-dark);
-    height: 100%;
-    position: absolute;
-    width: 100%;
-}
-.qv-listbox li .qv-listbox-text.qv-listbox-text-value{
-color:var(--text-dark1);
-}
-
 /* Media Queries */
 @media only screen and (min-width: 720px) {
 main {
@@ -605,15 +600,3 @@ animation: 1s Loader linear infinite;
   transform: rotate(360deg);
 }
 }
-
-/*
-#wDkVFV_content{
-background-color: #000000;
-}*/
-
-
-
-
-
-
-
