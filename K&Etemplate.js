@@ -53,8 +53,7 @@ require(["js/qlik"], function (qlik) {
       });
     $('[class="reloadTime"]').text(reloadTimeNew);
   });
- 
-
+  
   //get objects -- inserted here --
 		
 	/* Export Button logic for 2 tables. Pls change object IDs accordingly*/
