@@ -6,5 +6,6 @@ $(document).ready(function () {
   })
   $("#filter-toggle, #close-filters").click(function () {
     $(".wrapper, #bs-canvas-right").toggleClass("active-filters");
+	$('body').css('display', 'flex');
   })
 })
